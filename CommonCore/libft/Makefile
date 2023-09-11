@@ -3,12 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jbaeza-c <jbaeza-c@student.42madrid.es>    +#+  +:+       +#+         #
+#    By: jbaeza-c <jbaeza-c@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/08 03:00:18 by jbaeza-c          #+#    #+#              #
-#    Updated: 2023/09/08 03:00:18 by jbaeza-c         ###   ########.fr        #
+#    Created: 2023/09/11 12:50:57 by jbaeza-c          #+#    #+#              #
+#    Updated: 2023/09/11 12:50:57 by jbaeza-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
 
 SRCS = 	ft_isalnum.c ft_isprint.c ft_memcmp.c \
 		ft_putchar_fd.c ft_split.c ft_strlcat.c ft_strncmp.c ft_substr.c \
