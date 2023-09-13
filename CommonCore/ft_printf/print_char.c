@@ -15,7 +15,7 @@
 
 void	print_char(va_list args, int fd)
 {
-	int	value;
+	unsigned int	value;
 
 	value = va_arg(args, int);
 	ft_putchar_fd(value, fd);

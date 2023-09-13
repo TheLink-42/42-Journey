@@ -19,7 +19,7 @@ typedef struct s_print
 	void	(*execute)(va_list args, int fd);
 }	t_print;
 
-int		ft_printf(const char *format, ...);
+int	ft_printf(const char *format, ...);
 
 void	print_char(va_list args, int fd);
 void	print_decimal(va_list args, int fd);

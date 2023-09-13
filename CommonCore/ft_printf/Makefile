@@ -10,32 +10,41 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = 	ft_printf.c print_char.c print_decimal.c print_hexalow.c \
-		print_hexaup.c print_integer.c print_octal.c print_ptr.c \
-		print_string.c
-OBJS = $(SRCS:.c=.o)
+SRC = ft_printf.c print_char.c print_decimal.c print_hexalow.c \
+       print_hexaup.c print_integer.c print_octal.c print_ptr.c \
+       print_string.c
+SRCS = $(addsufix .c, $(SRC))
+
+OBJ_DIR = obj
+OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 
 LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
 
 CC = cc
-RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
+RM = rm -rf
 
-NAME = libftprintft.a
+$(OBJ_DIR)/%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+NAME = libftprintf.a
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJS)
+$(NAME): $(LIBFT) $(OBJ_DIR) $(OBJS)
 	cp $(LIBFT) $(NAME)
 	ar rcs $(NAME) $(OBJS)
 
 $(LIBFT):
 	make -C $(LIBFT_PATH) all
 
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
 clean:
 	make -C $(LIBFT_PATH) clean
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJ_DIR)
 
 fclean: clean
 	make -C $(LIBFT_PATH) fclean
@@ -43,4 +52,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus libft
+.PHONY: all clean fclean re

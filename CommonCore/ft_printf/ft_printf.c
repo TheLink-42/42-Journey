@@ -18,12 +18,12 @@ static void	check_case(int value, va_list args, int fd,
 	t_print *strategy_method)
 {
 	t_print	strategy;
-
+	
 	strategy = strategy_method[value];
 	if (strategy.execute)
 		strategy.execute(args, fd);
 	else
-		ft_putchar_fd(value, 1);
+		ft_putchar_fd(value, fd);
 }
 
 static t_print	*strategy_create(size_t size)
@@ -58,8 +58,6 @@ int	ft_printf(const char *format, ...)
 		{
 			i++;
 			check_case(format[i], args, 1, strategy_method);
-			if (format[i] != '%')
-				va_arg(args, int);
 		}
 		else
 			ft_putchar_fd(format[i], 1);
@@ -68,15 +66,16 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (0);
 }
-
+/*
 int	main(void)
 {
-	int	x;
+//	int	x;
+//	char	*s = "Hola mundo!";
 
-	x = 13;
-	ft_printf("%%Numero con personalizada: %p, %c, %u, %i %d, %x, %s\n",
-		&x, 48, x, x, x, x, "Trece");
-	printf("%%Numero sin personalizada: %p, %c, %u, %i %d, %x, %s\n",
-		&x, 48, x, x, x, x, "Trece");
+//	x = 98;
+//	ft_printf("%%Numero con personalizada: %p, %%, %c, %u, %d %i, %x, %s\n", &x, x, x, x, x, x, s);
+//	printf("%%Numero sin personalizada: %p, %%, %c, %u, %d %i, %x, %s\n", &x, x, x, x, x, x, s);
+	ft_printf(" %c\n", '0' - 256);
+	printf(" %c\n", '0' - 256);
 	return (0);
-}
+}*/
