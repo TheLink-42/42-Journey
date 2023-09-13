@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Libft/libft.h"
-#include "libprintf.h"
+#include "./libft/libft.h"
+#include "ft_printf.h"
 #include "stdio.h"
 
 static void	check_case(int value, va_list args, int fd,

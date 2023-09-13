@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Libft/libft.h"
-#include "libprintf.h"
+#include "./libft/libft.h"
+#include "ft_printf.h"
 
 void	print_char(va_list args, int fd)
 {

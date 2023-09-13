@@ -34,7 +34,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size_t	end;
 
 	start = 0;
-	end = ft_strlen(s1);
+	end = ft_strlen(s1) - 1;
 	while (s1[start] && is_sep(s1[start], set))
 		start++;
 	while (end > start && is_sep(s1[end], set))

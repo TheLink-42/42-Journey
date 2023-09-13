@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBPRINTF_H
-# define LIBPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 # include <stdarg.h>
 
 typedef struct s_print
