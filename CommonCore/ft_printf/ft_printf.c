@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 13:09:12 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/11 13:09:12 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/14 18:30:10 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,16 +66,10 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (0);
 }
-/*
+
 int	main(void)
 {
-//	int	x;
-//	char	*s = "Hola mundo!";
-
-//	x = 98;
-//	ft_printf("%%Numero con personalizada: %p, %%, %c, %u, %d %i, %x, %s\n", &x, x, x, x, x, x, s);
-//	printf("%%Numero sin personalizada: %p, %%, %c, %u, %d %i, %x, %s\n", &x, x, x, x, x, x, s);
-	ft_printf(" %c\n", '0' - 256);
-	printf(" %c\n", '0' - 256);
+	ft_printf("%c", '0');
+	printf("%c", '0');
 	return (0);
-}*/
+}

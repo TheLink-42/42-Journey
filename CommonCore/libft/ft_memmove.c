@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:53:48 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/11 12:53:48 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/11 19:03:52 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	int					i;
 
-	if (!dst || !src)
-		return (NULL);
+	if (!dst && !src)
+		return (0);
 	if (dst > src)
 	{
 		i = (int)n;

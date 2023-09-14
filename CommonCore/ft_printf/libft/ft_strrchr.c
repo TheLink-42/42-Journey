@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:48:43 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/11 12:48:43 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/14 18:46:14 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *str, int c)
 	while (i >= 0)
 	{
 		if (str[i] == (char)c)
-			return ((char *)(str + 1));
+			return ((char *)(str + i));
 		i--;
 	}
 	return (NULL);

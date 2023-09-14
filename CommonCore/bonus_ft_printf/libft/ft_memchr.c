@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:56:57 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/11 12:56:57 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/11 18:49:04 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memchr(void *s, int c, size_t n)
 {
 	size_t	i;
 
-	if (!s)
-		return (NULL);
 	i = 0;
 	while (i < n)
 	{

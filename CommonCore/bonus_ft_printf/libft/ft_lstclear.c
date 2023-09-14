@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:57:38 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/11 12:57:38 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/12 19:03:17 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,14 @@
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*node;
-	t_list	*next;
 
 	if (!del || !lst)
 		return ;
 	node = *lst;
-	while (node)
+	while (*lst)
 	{
-		next = node->next;
-		ft_lstdelone(node, del);
-		node = next;
+		node = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = node;
 	}
 }

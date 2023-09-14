@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "./../includes/ft_printf.h"
+#include "./../includes/ft_printf.h"
 
 static t_print	*init_tab(t_print *tab)
 {
@@ -21,26 +21,27 @@ static t_print	*init_tab(t_print *tab)
 
 static void	strat_create(t_strat *strat_method)
 {
-	//strat_method['d'] = (t_strat){.execute = print_integer};
-	//strat_method['i'] = (t_strat){.execute = print_integer};
-	//strat_method['u'] = (t_strat){.execute = print_decimal};
-	//strat_method['o'] = (t_strat){.execute = print_octal};
-	//strat_method['x'] = (t_strat){.execute = print_hexalow};
-	//strat_method['X'] = (t_strat){.execute = print_hexaup};
+	strat_method['d'] = (t_strat){.execute = print_integer};
+	strat_method['i'] = (t_strat){.execute = print_integer};
+	strat_method['u'] = (t_strat){.execute = print_decimal};
+	strat_method['o'] = (t_strat){.execute = print_octal};
+	strat_method['x'] = (t_strat){.execute = print_hexalow};
+	strat_method['X'] = (t_strat){.execute = print_hexaup};
 	strat_method['c'] = (t_strat){.execute = print_char};
 	strat_method['s'] = (t_strat){.execute = print_string};
-	//strat_method['p'] = (t_strat){.execute = print_ptr};
+	strat_method['p'] = (t_strat){.execute = print_ptr};
+	strat_method['%'] = (t_strat){.execute = print_perc};
 }
 
-static int	check_format(t_print *tab, const char *format, int pos, t_strat *strat_method)
+static int	check_format(t_print *tab, const char *format,
+int pos, t_strat *strat_method)
 {
-	int	nbr;
+	int		nbr;
 	t_strat	strategy;
 
 	tab->len = 0;
 	nbr = ft_atoi(&format[pos]);
 	tab->width = nbr;
-//	printf("width: %d\n", tab->width);
 	if (nbr > 0)
 	{
 		tab->len++;
@@ -50,26 +51,29 @@ static int	check_format(t_print *tab, const char *format, int pos, t_strat *stra
 			nbr /= 10;
 		}
 	}
-//	printf("Len: %d\n", tab->len);
 	strategy = strat_method[(int)format[pos + tab->len]];
 	if (strategy.execute)
 		strategy.execute(tab, 1);
 	else
 		ft_putchar_fd((unsigned int)format[pos + tab->len], 1);
-//	printf("Pos: %d\n", pos + tab->len);
 	return (pos + tab->len);
 }
 
 int	ft_printf(const char *format, ...)
 {
-	int	i;
+	int		i;
 	t_print	*tab;
 	t_strat	*strat_method;
 
 	strat_method = ft_calloc(128, sizeof(t_strat));
+	if (!strat_method)
+		return (-1);
 	tab = (t_print *)malloc(sizeof(t_print));
 	if (!tab)
+	{
+		free(strat_method);
 		return (-1);
+	}
 	strat_create(strat_method);
 	init_tab(tab);
 	va_start(tab->args, format);
@@ -77,7 +81,7 @@ int	ft_printf(const char *format, ...)
 	while (format[++i])
 	{
 		if (format[i] == '%')
-			i = i + check_format(tab, format, i + 1, strat_method);
+			i = check_format(tab, format, i + 1, strat_method);
 		else
 			ft_putchar_fd((unsigned int)format[i], 1);
 	}
@@ -86,10 +90,10 @@ int	ft_printf(const char *format, ...)
 	free(strat_method);
 	return (i);
 }
-
-int main()
+/*
+int	main(void)
 {
-	ft_printf("Personal: %3s\n", "Hola Mundo");
-	printf("Original: %3s\n", "Hola Mundo");
+	ft_printf("%c", '0');
+	printf("%c", '0');
 	return (0);
-}
+}*/

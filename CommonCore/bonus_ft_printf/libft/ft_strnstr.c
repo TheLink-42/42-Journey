@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:48:51 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/11 12:48:51 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/12 19:09:56 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!haystack)
-		return (NULL);
-	if (!needle || !*needle)
+	if (!*needle)
 		return ((char *)haystack);
 	i = 0;
 	while (haystack[i] && i < len)

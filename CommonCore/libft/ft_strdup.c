@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:49:32 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/11 12:49:32 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/11 21:22:41 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strdup(const char *s1)
 	char	*str;
 	int		i;
 
-	if (!s1)
-		return (NULL);
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
 	if (!str)
 		return (NULL);

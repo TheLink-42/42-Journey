@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:19:55 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/11 12:19:55 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/11 20:20:25 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	i;
+	size_t	s_len;
 
+	s_len = ft_strlen(s);
+	i = 0;
+	if (start >= s_len)
+	{
+		str = (char *)malloc(sizeof(char));
+		*str = '\0';
+		return (str);
+	}
+	if (len > s_len)
+		len = s_len;
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);

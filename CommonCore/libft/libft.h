@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:19:35 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/11 12:19:35 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/11 18:31:46 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strdup(const char *s1);
 char	*ft_itoa(int n);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 int		ft_isascii(int c);
 int		ft_isalpha(int c);

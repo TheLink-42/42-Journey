@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "./../includes/ft_printf.h"
+#include "./../includes/ft_printf.h"
 
 void	print_char(t_print *tab, int fd)
 {
 	unsigned int	value;
-	int		i;
+	int				i;
 
 	value = va_arg(tab->args, int);
 	i = -1;

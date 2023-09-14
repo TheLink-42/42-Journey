@@ -10,20 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "./../includes/ft_printf.h"
+#include "./../includes/ft_printf.h"
 
 void	print_string(t_print *tab, int fd)
 {
 	char	*value;
-//	int	i;
-	(void)fd;
-//	i = 0;
+	int		i;
+
+	i = 0;
 	value = va_arg(tab->args, char *);
-	printf("%s\n", value);
-//	while (i < tab->width - (int)ft_strlen(value))
-//	{
-//		ft_putchar_fd(' ', fd);
-//		i++;
-//	}
-//	ft_putstr_fd("Hola Mundo", fd);
+	while (i < tab->width - (int)ft_strlen(value))
+	{
+		ft_putchar_fd(' ', fd);
+		i++;
+	}
+	ft_putstr_fd(value, fd);
 }

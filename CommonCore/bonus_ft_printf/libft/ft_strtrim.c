@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:48:36 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/11 12:48:36 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/12 19:33:34 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 static int	is_sep(char c, const char *sep)
 {
-	size_t	i;
+	size_t		i;
+	const char	*aux;
 
 	i = 0;
-	while (sep[i])
+	aux = sep;
+	while (aux[i])
 	{
-		if (sep[i] == c)
+		if ((int)aux[i] == (int)c)
 			return (1);
 		i++;
 	}
@@ -28,23 +30,23 @@ static int	is_sep(char c, const char *sep)
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	char	*str;
-	size_t	i;
-	size_t	start;
-	size_t	end;
+	char		*str;
+	size_t		i;
+	const char	*start;
+	const char	*end;
 
-	start = 0;
-	end = ft_strlen(s1);
-	while (s1[start] && is_sep(s1[start], set))
+	start = s1;
+	end = start + ft_strlen(s1) - 1;
+	while (*start && is_sep(*start, set))
 		start++;
-	while (end > start && is_sep(s1[end], set))
+	while (end > start && is_sep(*end, set))
 		end--;
-	str = (char *)malloc(sizeof(char) * (end - start + 1));
+	str = (char *)malloc(sizeof(char) * (end - start + 2));
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (start < end)
-		str[i++] = s1[start++];
+	while (start <= end)
+		str[i++] = *start++;
 	str[i] = '\0';
 	return (str);
 }
