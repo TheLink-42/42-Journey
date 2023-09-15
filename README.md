@@ -16,7 +16,7 @@ Feel free to use and implement my code as much as you need to.
 
 ## Common Core :space_invader:
 1. [LIBFT](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/libft)
-2. [FT_PRINTF](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/bonus_ft_printf)
+2. [FT_PRINTF](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/ft_printf)
 
 ## Piscine :ocean:
 1. [SHELL](https://github.com/Afromaaaan/42-Journey/tree/main/Piscine/SHELL)
