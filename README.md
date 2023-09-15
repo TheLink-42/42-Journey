@@ -5,7 +5,7 @@ Just a simple repo to keep track of all my work done at 42!
 
 Feel free to use and implement my code as much as you need to.
 
-## :warning: I strongly suggest not to copy my code but to use it as a reference. :warning:
+#### :warning: I strongly suggest not to copy my code but to use it as a reference. :warning:
 ### :exclamation: Do not copy something that you don´t understand. :exclamation:
 
 ## Contents
