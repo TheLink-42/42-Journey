@@ -16,4 +16,4 @@ Feel free to use and implement my code as much as you need to.
 
 ## FAQ
 
-If you have any questions feel free to create an issue or reach me on slack under 'jbaeza-c'
+If you have any questions feel free to create an issue or reach me on slack under `jbaeza-c`
