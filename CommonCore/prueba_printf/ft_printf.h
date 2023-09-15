@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 18:35:06 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/14 00:30:48 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/15 09:57:16 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_print
 	va_list	args;
 	int		width;
 	int		len;
+	int		count;
 }	t_print;
 
 typedef struct s_strat

@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:19:35 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/14 18:11:03 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/15 12:47:34 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbru_base_fd(unsigned int n, char *base, int fd);
-void	ft_putptr_fd(void *ptr, int fd);
+char	*ft_putptr(unsigned long ptr);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);

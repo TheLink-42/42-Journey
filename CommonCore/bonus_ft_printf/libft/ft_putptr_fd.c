@@ -6,19 +6,20 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 13:00:27 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/12 19:56:08 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/15 15:27:12 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putptr_fd(void *ptr, int fd)
+char	*ft_putptr(unsigned long ptr)
 {
-	char	address_str[20];
+	char	*address_str;
 	size_t	address;
 	size_t	i;
 	int		nibble;
 
+	address_str = ft_strdup("0000000000000000");
 	address = (size_t)ptr;
 	i = 0;
 	while (i < sizeof(void *) * 2)
@@ -30,6 +31,5 @@ void	ft_putptr_fd(void *ptr, int fd)
 			address_str[i] = 'a' + nibble - 10;
 		i++;
 	}
-	address_str[i] = '\0';
-	ft_putstr_fd(address_str, fd);
+	return (address_str);
 }

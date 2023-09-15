@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 18:38:16 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/14 00:52:35 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/15 16:19:00 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static t_print	*init_tab(t_print *tab)
 {
 	tab->width = 0;
 	tab->len = 0;
+	tab->count = 0;
 	return (tab);
 }
 
@@ -59,9 +60,25 @@ int pos, t_strat *strat_method)
 	return (pos + tab->len);
 }
 
+static void	send_print(t_print *tab, const char *format,
+		t_strat *strat_method, int *i)
+{
+	int	pos;
+
+	pos = *i;
+	if (format[pos] == '%')
+		*i = check_format(tab, format, pos + 1, strat_method);
+	else
+	{
+		ft_putchar_fd(format[pos], 1);
+		tab->count++;
+	}
+}
+
 int	ft_printf(const char *format, ...)
 {
 	int		i;
+	int		ret;
 	t_print	*tab;
 	t_strat	*strat_method;
 
@@ -79,21 +96,10 @@ int	ft_printf(const char *format, ...)
 	va_start(tab->args, format);
 	i = -1;
 	while (format[++i])
-	{
-		if (format[i] == '%')
-			i = check_format(tab, format, i + 1, strat_method);
-		else
-			ft_putchar_fd((unsigned int)format[i], 1);
-	}
+		send_print(tab, format, strat_method, &i);
 	va_end(tab->args);
+	ret = tab->count;
 	free(tab);
 	free(strat_method);
-	return (i);
+	return (ret);
 }
-/*
-int	main(void)
-{
-	ft_printf("%c", '0');
-	printf("%c", '0');
-	return (0);
-}*/

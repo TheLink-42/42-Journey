@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:10:20 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/14 19:10:22 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/15 11:39:09 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_itoa_base(unsigned int n, char *base)
 	if (!str)
 		return (NULL);
 	if (n == 0)
-		str[1] = '0';
+		str[0] = '0';
 	length = 0;
 	while (n != 0)
 	{

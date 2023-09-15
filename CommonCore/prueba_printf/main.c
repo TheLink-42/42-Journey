@@ -1,15 +1,12 @@
 #include "ft_printf.h"
+#define INT_MIN -2147483648
+
 
 int main()
 {
-	int x;
-	int y;
-
-	char	*a;
-
-	a ="patata";
-
-	x = ft_printf("%s esto\n", a);
-	y = printf("%s esto\n", a);
+	int	x;
+	int	y;
+	x = ft_printf(" %p \n", 16);
+	y = printf("%p", 0);
 	printf("%d, %d\n", x, y);
 }
