@@ -14,11 +14,11 @@ Feel free to use and implement my code as much as you need to.
 
 
 
-## Common Core
+## Common Core :space_invader:
 1. [LIBFT](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/libft)
 2. [FT_PRINTF](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/bonus_ft_printf)
 
-## Piscine
+## Piscine :ocean:
 1. [SHELL](https://github.com/Afromaaaan/42-Journey/tree/main/Piscine/SHELL)
 	* [shell-00](https://github.com/Afromaaaan/42-Journey/tree/main/Piscine/SHELL/SHELL-00)
 	* [shell-01](https://github.com/Afromaaaan/42-Journey/tree/main/Piscine/SHELL/SHELL-01)
