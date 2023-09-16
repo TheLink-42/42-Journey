@@ -27,7 +27,13 @@ It must contain the following functions (all with ft_ prefix):
 - toupper
 
 
-2. Other functions to add tou your library
+You may use malloc for these functions:
+
+- strdup
+- calloc
+
+
+## 2. Other functions to add tou your library
 * **substr**
 
 	**Prototype**:	char *ft_substr(const char *s, unsigned int start, size_t len);
