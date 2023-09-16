@@ -30,19 +30,19 @@ It must contain the following functions (all with ft_ prefix):
 2. Other functions to add tou your library
 * **substr**
 
-**Prototype**:	char *ft_substr(const char *s, unsigned int start, size_t len);
+	**Prototype**:	char *ft_substr(const char *s, unsigned int start, size_t len);
 
-**Parameters**:	`s` -> Source string to create the substring.
+	**Parameters**:	`s` -> Source string to create the substring.
 		`start` -> Index of the char in `s` from where to start the substring.
 		`len` -> Max length of the substring.
 
-**Return values**:	The substring.
+	**Return values**:	The substring.
 			NULL if memory allocation fails.
 
-**Authorized 
-Functions**:	malloc
+	**Authorized 
+	Functions**:	malloc
 
-**Description**:	Allocates memory with malloc(3) and returns the substring from string `s`.
+	**Description**:	Allocates memory with malloc(3) and returns the substring from string `s`.
 			The substring strats at `strat` index with the max length of `len`.
 
 
