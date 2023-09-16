@@ -6,7 +6,7 @@
 #    By: jbaeza-c <jbaeza-c@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 12:50:57 by jbaeza-c          #+#    #+#              #
-#    Updated: 2023/09/11 18:30:47 by jbaeza-c         ###   ########.fr        #
+#    Updated: 2023/09/16 21:34:12 by jimmy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,21 +34,25 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
+BONUS_NAME = .bonus
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
+bonus: $(BONUS_NAME)
+
 clean:
 	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(BONUS_NAME)
 
 re: fclean all
 
-bonus: $(OBJS) $(BONUS_OBJS)
+$(BONUS_NAME): $(OBJS) $(BONUS_OBJS)
 	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+	ar rcs $(BONUS_NAME) $(OBJS) $(BONUS_OBJS)
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
