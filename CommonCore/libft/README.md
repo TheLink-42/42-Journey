@@ -1,4 +1,4 @@
-# LIBFT
+## LIBFT
 
 In this project you have to create your own library which you can use in future projects.
 It must contain the following functions (all with ft_ prefix):
@@ -29,7 +29,7 @@ It must contain the following functions (all with ft_ prefix):
 * [toupper]
 
 2. Other functions to add tou your library
-* [substr]{https://github.com/Afromaaaan/42-Journey/blob/main/CommonCore/libft/ft_substr.c}
+* [substr](https://github.com/Afromaaaan/42-Journey/blob/main/CommonCore/libft/ft_substr.c)
 	Prototype:	char *ft_substr(const char *s, unsigned int start, size_t len);
 	Parameters:	s -> Source string to create the substring.
 			start -> Index of the char in 's' from where to start the substring.
