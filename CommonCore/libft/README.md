@@ -48,7 +48,8 @@ It must contain the following functions (all with ft_ prefix):
 
 
 
-* [strjoin]
+
+* [strjoin](https://github.com/Afromaaaan/42-Journey/blob/main/CommonCore/libft/ft_strjoin.c)
 
 	Protoype:	char *ft_strjoin(const char *s1, const char *s2);
 
