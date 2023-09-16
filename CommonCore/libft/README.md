@@ -54,7 +54,7 @@ You may use malloc for these functions:
 
 
 
-* strjoin
+* **strjoin**
 
 
 	**Protoype**:	char *ft_strjoin(const char *s1, const char *s2);
@@ -74,7 +74,7 @@ You may use malloc for these functions:
 
 
 
-* strtrim
+* **strtrim**
 
 	**Prototype**:	char *ft_strtrim(const char *s1, const char *set);
 
@@ -92,7 +92,7 @@ You may use malloc for these functions:
 
 
 
-* split
+* **split**
 
 	**Prototype**:	char **ft_split(const char *s, char c)
 
