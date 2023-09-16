@@ -32,17 +32,13 @@ It must contain the following functions (all with ft_ prefix):
 * [substr](https://github.com/Afromaaaan/42-Journey/blob/main/CommonCore/libft/ft_substr.c)
 
 	Prototype:	char *ft_substr(const char *s, unsigned int start, size_t len);
-
 	Parameters:	s -> Source string to create the substring.
 			start -> Index of the char in 's' from where to start the substring.
 			len -> Max length of the substring.
-
 	Return values:	The substring.
 			NULL if memory allocation fails.
-
 	Authorized 
 	Functions:	malloc
-
 	Description:	Allocates memory with malloc(3) and returns the substring from string 's'.
 			The substring strats at 'strat' index with the max length of 'len'.
 
