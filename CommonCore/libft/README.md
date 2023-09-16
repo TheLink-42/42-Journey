@@ -53,11 +53,11 @@ It must contain the following functions (all with ft_ prefix):
 
 	Protoype:	char *ft_strjoin(const char *s1, const char *s2);
 
-	Parameters:	s1 -> First string.
-			s2 -> String to add to s1;
+	Parameters:	-s1 -> First string.
+			-s2 -> String to add to s1;
 
-	Return values:	The new string.
-			NULL if memory allocation fails.
+	Return values:	-The new string.
+			-NULL if memory allocation fails.
 
 	Authorized
 	Functions:	malloc
