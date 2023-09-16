@@ -3,7 +3,7 @@
 In this project you have to create your own library which you can use in future projects.
 It must contain the following functions (all with ft_ prefix):
 
-1. Functions included in libc
+## 1. Functions included in libc
 - atoi					
 - bzero
 - isalnum				
