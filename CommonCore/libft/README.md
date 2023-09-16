@@ -32,9 +32,9 @@ It must contain the following functions (all with ft_ prefix):
 
 	Prototype:	char *ft_substr(const char *s, unsigned int start, size_t len);
 
-	Parameters:	s -> Source string to create the substring.
-			start -> Index of the char in 's' from where to start the substring.
-			len -> Max length of the substring.
+	Parameters:	`s` -> Source string to create the substring.
+			`start` -> Index of the char in `s` from where to start the substring.
+			`len` -> Max length of the substring.
 
 	Return values:	The substring.
 			NULL if memory allocation fails.
@@ -42,8 +42,8 @@ It must contain the following functions (all with ft_ prefix):
 	Authorized 
 	Functions:	malloc
 
-	Description:	Allocates memory with malloc(3) and returns the substring from string 's'.
-			The substring strats at 'strat' index with the max length of 'len'.
+	Description:	Allocates memory with malloc(3) and returns the substring from string `s`.
+			The substring strats at `strat` index with the max length of `len`.
 
 
 
