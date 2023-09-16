@@ -39,10 +39,10 @@ It must contain the following functions (all with ft_ prefix):
 **Return values**:	The substring.
 			NULL if memory allocation fails.
 
-	**Authorized 
-	Functions**:	malloc
+**Authorized 
+Functions**:	malloc
 
-	**Description**:	Allocates memory with malloc(3) and returns the substring from string `s`.
+**Description**:	Allocates memory with malloc(3) and returns the substring from string `s`.
 			The substring strats at `strat` index with the max length of `len`.
 
 
