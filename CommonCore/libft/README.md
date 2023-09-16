@@ -4,17 +4,27 @@ In this project you have to create your own library which you can use in future 
 It must contain the following functions (all with ft_ prefix):
 
 1. Functions included in libc
-* atoi					* bzero
-* isalnum				* isalpha
-* isascii				* isdigit
-* isprint				* memchr
-* memcmp				* memcpy
-* memmove				* memset
-* strchr				* strlcat
-* strlcpy				* strlen
-* strncmp				* strnstr
-* strrchr				* tolower
-* toupper
+- atoi					
+- bzero
+- isalnum				
+- isalpha
+- isascii				
+- isdigit
+- isprint				
+- memchr
+- memcmp				
+- memcpy
+- memmove				
+- memset
+- strchr				
+- strlcat
+- strlcpy				
+- strlen
+- strncmp				
+- strnstr
+- strrchr				
+- tolower
+- toupper
 
 
 2. Other functions to add tou your library
