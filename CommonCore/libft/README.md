@@ -4,7 +4,7 @@ In this project you have to create your own library which you can use in future 
 It must contain the following functions (all with ft_ prefix):
 
 ## 1. Functions included in libc
-- atoi					
+- **atoi**					
 - bzero
 - isalnum				
 - isalpha
@@ -28,7 +28,7 @@ It must contain the following functions (all with ft_ prefix):
 
 
 2. Other functions to add tou your library
-* substr
+* **substr**
 
 	Prototype:	char *ft_substr(const char *s, unsigned int start, size_t len);
 
