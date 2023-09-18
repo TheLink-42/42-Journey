@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:58:26 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/11 21:19:48 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/18 12:01:50 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (!nmemb || !size)
 	{
-		ptr = (void *)malloc(size);
+		ptr = (void *)malloc(0);
 		return (ptr);
 	}
 	ptr = (void *)malloc(nmemb * size);

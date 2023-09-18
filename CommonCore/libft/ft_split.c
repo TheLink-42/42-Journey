@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:49:43 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/11 12:49:43 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/18 12:35:09 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,19 @@ static void	custom_cpy(char *dst, const char *src, int len)
 	dst[i] = '\0';
 }
 
+static void	free_tab(char **tab, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+}
+
 char	**ft_split(const char *s, char c)
 {
 	char		**tab;
@@ -80,6 +93,8 @@ char	**ft_split(const char *s, char c)
 		else
 		{
 			tab[i++] = (char *)malloc(sizeof(char) * custom_len(s, c) + 1);
+			if (!tab[i - 1])
+				return (free_tab(tab, i), NULL);
 			custom_cpy(tab[i - 1], s, custom_len(s, c));
 			s = s + custom_len(s, c);
 			j--;
