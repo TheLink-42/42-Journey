@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 21:00:12 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/19 00:41:50 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/20 01:28:31 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ char	*free_stored_line(char *fd_storage)
 
 	ptr = ft_strchr(fd_storage, '\n');
 	if (!ptr)
+	{
+		new_storage = NULL;
 		return (custom_free(&fd_storage));
+	}
 	else
 		len = ptr - fd_storage + 1;
 	if (!fd_storage[len])
@@ -39,7 +42,7 @@ char	*free_stored_line(char *fd_storage)
 	return (new_storage);
 }
 
-char	*get_line(char *fd_storage)
+char	*ft_get_line(char *fd_storage)
 {
 	char	*line;
 	char	*ptr;
@@ -66,7 +69,7 @@ char	*read_file(int fd, char *fd_storage)
 	if (!buffer)
 		return (custom_free(&fd_storage));
 	buffer[0] = '\0';
-	while (bytes_read > 0)
+	while (bytes_read > 0 && !ft_strchr(fd_storage, '\n'))
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read > 0)
@@ -88,10 +91,11 @@ char	*get_next_line(int fd)
 
 	if (fd < 0)
 		return (NULL);
-	fd_storage = read_file(fd, fd_storage);
+	if (!fd_storage || !ft_strchr(fd_storage, '\n'))
+		fd_storage = read_file(fd, fd_storage);
 	if (!fd_storage)
 		return (NULL);
-	line = get_line(fd_storage);
+	line = ft_get_line(fd_storage);
 	if (!line)
 		return (custom_free(&fd_storage));
 	fd_storage = free_stored_line(fd_storage);

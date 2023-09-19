@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 21:02:26 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/19 00:37:07 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/20 01:19:12 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,28 @@ char	*ft_strchr(char *str, int c)
 {
 	int	i;
 
+	if (!str)
+		return (NULL);
 	i = -1;
 	while (str[++i])
 		if (str[i] == (char)c)
-			return ((char *)(str + i));
+			return (&((char *)str)[i]);
 	if (str[i] == (char)c)
-		return ((char *)(str + i));
-	return (NULL);
+		return (&((char *)str)[i]);
+	return (0);
+}
+
+char	*ft_strdup(char *str)
+{
+	char	*ret;
+	int		i;
+
+	ret = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
+	if (!ret)
+		return (NULL);
+	i = -1;
+	while (str[++i])
+		ret[i] = str[i];
+	ret[i] = '\0';
+	return (ret);
 }
