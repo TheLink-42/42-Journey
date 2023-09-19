@@ -2,9 +2,6 @@
 
 Just a simple repo to keep track of all my work done at 42!
 
-Check my progression in Common Core [here](https://projects.intra.42.fr/projects/graph?login=jbaeza-c)
-My intra profile [here](https://profile.intra.42.fr/users/jbaeza-c)
-
 Feel free to use and implement my code as much as you need to.
 
 #### :warning: I strongly suggest not to copy my code but to use it as a reference. :warning:
@@ -49,3 +46,6 @@ Feel free to use and implement my code as much as you need to.
 ## FAQ
 
 If you have any questions feel free to create an issue or reach me on slack under `jbaeza-c`
+
+
+###You can check my Intra profile [here](https://profile.intra.42.fr/users/jbaeza-c)
