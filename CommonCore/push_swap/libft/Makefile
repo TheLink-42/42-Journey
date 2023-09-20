@@ -6,17 +6,17 @@
 #    By: jbaeza-c <jbaeza-c@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 12:50:57 by jbaeza-c          #+#    #+#              #
-#    Updated: 2023/09/20 16:08:24 by jimmy            ###   ########.fr        #
+#    Updated: 2023/09/20 19:52:43 by jimmy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
 SRCS = 		$(addprefix string/, ft_split.c ft_strlcat.c ft_strncmp.c \
-		ft_substr.c ft_atoi.c ft_itoa.c ft_strchr.c ft_strlcpy.c \
-		ft_strnstr.c ft_strdup.c ft_strlen.c ft_strrchr.c \
-		ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_striteri.c \
-		ft_itoa_base.c)							\
+			ft_substr.c ft_atoi.c ft_itoa.c ft_strchr.c \
+			ft_strlcpy.c ft_strnstr.c ft_strdup.c ft_strlen.c \
+			ft_strrchr.c ft_strjoin.c ft_strmapi.c ft_strtrim.c \
+			ft_striteri.c ft_itoa_base.c)				\
 		$(addprefix put_fd/, ft_putchar_fd.c ft_putstr_fd.c \
 			ft_putnbr_fd.c ft_putnbru_base_fd.c ft_putendl_fd.c \
 			ft_putptr_fd.c)						\
@@ -30,7 +30,8 @@ SRCS = 		$(addprefix string/, ft_split.c ft_strlcat.c ft_strncmp.c \
 			ft_calloc.c)						\
 		$(addprefix printf/, ft_printf.c print_char.c print_decimal.c \
 			print_hexalow.c print_hexaup.c print_integer.c \
-			print_octal.c print_perc.c print_ptr.c print_string.c)		
+			print_octal.c print_perc.c print_ptr.c print_string.c)	\
+		$(addprefix gnl/, get_next_line.c get_next_line_utils.c)		
 		
 
 OBJS = $(SRCS:.c=.o)

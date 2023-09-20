@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:19:35 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/20 16:06:41 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/20 19:50:49 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdarg.h>
 # include <fcntl.h>
 # include "./printf/ft_printf.h"
+# include "./gnl/get_next_line.h"
 
 typedef struct s_list
 {
