@@ -6,7 +6,7 @@
 #    By: jbaeza-c <jbaeza-c@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 12:50:57 by jbaeza-c          #+#    #+#              #
-#    Updated: 2023/09/20 14:44:07 by jimmy            ###   ########.fr        #
+#    Updated: 2023/09/20 16:08:24 by jimmy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,10 @@ SRCS = 		$(addprefix string/, ft_split.c ft_strlcat.c ft_strncmp.c \
 			ft_lstmap.c ft_lstnew.c ft_lstsize.c)			\
 		$(addprefix memory/, ft_bzero.c ft_memccpy.c ft_memchr.c \
 			ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c \
-			ft_calloc.c)						
+			ft_calloc.c)						\
+		$(addprefix printf/, ft_printf.c print_char.c print_decimal.c \
+			print_hexalow.c print_hexaup.c print_integer.c \
+			print_octal.c print_perc.c print_ptr.c print_string.c)		
 		
 
 OBJS = $(SRCS:.c=.o)
