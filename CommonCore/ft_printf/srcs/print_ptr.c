@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 19:03:08 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/15 16:14:29 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/18 13:18:41 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static int	is_zero(t_print *tab, char *o_value, int fd)
 		i++;
 	if (!o_value[i])
 	{
-		ft_putstr_fd("(nil)", fd);
-		tab->count += 5;
+		ft_putstr_fd("0x0", fd);
+		tab->count += 3;
 		free(o_value);
 		return (0);
 	}

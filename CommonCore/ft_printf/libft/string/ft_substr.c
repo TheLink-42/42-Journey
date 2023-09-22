@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 12:19:55 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/09/20 14:58:36 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/22 12:13:48 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		return (ft_strdup(""));
 	}
-	if (len > s_len - start )
+	if (len > s_len - start)
 		len = s_len - start;
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
