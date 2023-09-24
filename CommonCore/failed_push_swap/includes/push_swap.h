@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 14:00:58 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/21 16:22:04 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/23 10:55:52 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 typedef struct s_stack
 {
 	int				value;
-	long			index;
+	unsigned int		index;
 	int				keep_a;
 	struct s_stack	*next;
 }	t_stack;
