@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_node.c                                         :+:      :+:    :+:   */
+/*   search_first.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 17:13:42 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/25 14:55:03 by jimmy            ###   ########.fr       */
+/*   Created: 2023/09/25 11:34:21 by jimmy             #+#    #+#             */
+/*   Updated: 2023/09/25 11:48:08 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../includes/psw.h"
 
-t_node	*new_node(int value)
+int	search_first(t_stack **stack, int max_index, int min_index)
 {
-	t_node	*new;
+	t_node	*node;
+	int		cnt;
 
-	new = (t_node *)malloc(sizeof(t_node));
-	if (!new)
-		return (NULL);
-	new->value = value;
-	new->index = -1;
-	new->next = NULL;
-	new->prev = NULL;
-	return (new);
+	cnt = 0;
+	node = (*stack)->node;
+	if (!node)
+		return (-2);
+	while (node)
+	{
+		if (node->index >= min_index && node->index <= max_index)
+			return (cnt);
+		cnt++;
+		node = node->next;
+	}
+	return (-1);
 }

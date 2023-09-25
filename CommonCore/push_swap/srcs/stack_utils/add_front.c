@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_node.c                                         :+:      :+:    :+:   */
+/*   add_front.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 17:13:42 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/25 14:55:03 by jimmy            ###   ########.fr       */
+/*   Created: 2023/09/25 23:24:57 by jimmy             #+#    #+#             */
+/*   Updated: 2023/09/25 23:28:56 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../includes/psw.h"
 
-t_node	*new_node(int value)
+void	add_front(t_stack **stack, t_node *new_node)
 {
-	t_node	*new;
+	t_node	*node;
 
-	new = (t_node *)malloc(sizeof(t_node));
-	if (!new)
-		return (NULL);
-	new->value = value;
-	new->index = -1;
-	new->next = NULL;
-	new->prev = NULL;
-	return (new);
+	node = (*stack)->node;
+	if (node)
+	{
+		new_node->next = node;
+		node->prev = new_node;
+	}
+	(*stack)->node = new_node;
 }

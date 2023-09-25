@@ -6,25 +6,38 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 12:01:31 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/24 13:12:19 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/25 23:53:02 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../../includes.psw.h"
+#include "./../../includes/psw.h"
+
+static void	small_swap(t_node *node, t_node *aux)
+{
+	node->prev = aux;
+	aux->next = node;
+	node->next = NULL;
+	aux->prev = NULL;
+}
 
 static void	swap(t_stack **stack)
 {
-	t_node *node;
-	t_node *aux;
+	t_node	*node;
+	t_node	*aux;
 
 	node = (*stack)->node;
 	if (!node || !node->next)
 		return ;
 	aux = node->next;
-	node->next = aux->next;
+	if (!aux->next)
+	{
+		small_swap(node, aux);
+		(*stack)->node = aux;
+		return ;
+	}
 	aux->next->prev = node;
+	node->next = aux->next;
 	aux->next = node;
-	node->prev = aux;
 	aux->prev = NULL;
 	(*stack)->node = aux;
 }

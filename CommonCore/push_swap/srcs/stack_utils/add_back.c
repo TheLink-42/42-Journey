@@ -6,20 +6,21 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:19:42 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/23 17:34:11 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/25 19:03:42 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../includes/psw.h"
 
-int	add_back(t_node **head, t_node *new_node)
+int	add_back(t_stack **stack, t_node *new_node)
 {
 	t_node	*node;
 
-	node = *head;
+	node = (*stack)->node;
 	if (!node)
 	{
-		*head = new_node;
+		(*stack)->node = new_node;
+		(*stack)->size++;
 		return (0);
 	}
 	if (node && !node->next && node->value == new_node->value)
@@ -32,5 +33,6 @@ int	add_back(t_node **head, t_node *new_node)
 	}
 	new_node->prev = node;
 	node->next = new_node;
+	(*stack)->size++;
 	return (0);
 }
