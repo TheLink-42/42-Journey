@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:16:41 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/25 21:43:43 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/26 12:07:24 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	check_int(char *str)
 	return (0);
 }
 
-int	is_sorted(t_stack **stack)
+int	is_unsorted(t_stack **stack)
 {
 	t_node	*node;
 

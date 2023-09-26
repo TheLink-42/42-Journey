@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:06:31 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/25 23:31:16 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/26 12:07:37 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	search_last(t_stack **stack, int max_index, int min_index);
 int	check_args(int argc, char **argv);
 int	check_numbers(char **argv);
 int	check_int(char *str);
-int	is_sorted(t_stack **stack);
+int	is_unsorted(t_stack **stack);
 
 //Init
 int	init_stack(t_stack **stack_a, t_stack **stack_b, char **argv);
@@ -68,9 +68,10 @@ void	fill_index(t_stack **stack, int index, int value);
 //Sort
 void	sort_three(t_stack **stack);
 void	sort_five(t_stack **stack_a, t_stack **stack_b);
+void	jimmy_sort(t_stack **stack_a, t_stack **stack_b);
 
 void	sort(t_stack **stack_a, t_stack **stack_b);
-void	sort_small(t_stack **stack_a, t_stack **stack_b);
-void	sort_big(t_stack **stack_a, t_stack **stack_b);
+void	sort_small_stack(t_stack **stack_a, t_stack **stack_b);
+void	sort_big_stack(t_stack **stack_a, t_stack **stack_b);
 
 #endif

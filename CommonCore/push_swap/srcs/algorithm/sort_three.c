@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:24:56 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/25 14:51:40 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/26 12:08:23 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	compare(t_node *f, t_node *s, t_node *t, t_stack **stack)
 	else if (f->index > s->index && s->index < t->index)
 		do_ra(stack);
 	else if (f->index < s->index && s->index > t->index
-			&& f->index < t->index)
+		&& f->index < t->index)
 	{
 		do_sa(stack);
 		do_ra(stack);
@@ -42,6 +42,6 @@ void	sort_three(t_stack **stack)
 	first = (*stack)->node;
 	second = first->next;
 	third = second->next;
-	if (is_sorted(stack))
+	if (is_unsorted(stack))
 		compare(first, second, third, stack);
 }
