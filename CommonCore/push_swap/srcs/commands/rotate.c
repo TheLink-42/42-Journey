@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 13:19:19 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/25 12:15:13 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/27 11:22:58 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ static void	rotate(t_stack **stack)
 
 void	do_ra(t_stack **stack_a)
 {
-	rotate(stack_a);
-	ft_printf("ra\n");
+	{
+		rotate(stack_a);
+		ft_printf("ra\n");
+	}
 }
 
 void	do_rb(t_stack **stack_b)

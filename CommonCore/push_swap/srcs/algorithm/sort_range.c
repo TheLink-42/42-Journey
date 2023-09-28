@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 11:43:52 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/26 19:16:20 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/09/27 13:02:55 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,58 +14,50 @@
 
 void	sort_b(t_stack **stack)
 {
-	t_node		*node;
-	int			cnt;
-	static int	mid;
+//	(void)stack;
+//	ft_printf("Sorting b\n");
+
+	t_node	*node;
 
 	node = (*stack)->node;
-	cnt = 0;
-	mid = (*stack)->size / 2;
 	while (node->next)
 	{
 		if (node->index < node->next->index)
 		{
-			if (cnt <= mid)
-				do_rb(stack);
-			else
-				do_rrb(stack);
+			do_rb(stack);
+			node = (*stack)->node;
 		}
-		node = node->next;
-		cnt++;
+		else
+			node = node->next;
 	}
 }
 
-void	align_b(t_stack **stack_a, t_stack **stack_b)
+void	align_b(t_stack **stack_b, int	index)
 {
-	int	index;
-	int	is_in_stack;
-	int	up;
-	int	down;
+	int		is_in_stack;
+	t_node	*node;
 
-	if ((*stack_b)->node = NULL)
-		return ;
-	index = (*stack_a)->node->index;
 	is_in_stack = 0;
-	while (index > 0 && !is_in_stack)
-		if (find_index(stack_b, --index))
+	node = (*stack_b)->node;
+	if (!node)
+		return ;
+	while (!is_in_stack && index > 0)
+	{
+		index--;
+		if (find_index(stack_b, index))
 			is_in_stack = 1;
+	}
 	if (!is_in_stack)
 		sort_b(stack_b);
 	else
 	{
-		up = search_first(stack_b, index, index);
-		down = search_last(stack_b, index, index);
-		if (up <= down)
-			while (up--)
+		while (node->index != index)
+		{
 				do_rb(stack_b);
-		else
-			while (down--)
-				do_rb(stack_b);
+				node = (*stack_b)->node;
+		}
 	}
 }
-
-
-
 
 void	sort_range(t_stack **stack_a, t_stack **stack_b, int max, int min)
 {
@@ -84,7 +76,7 @@ void	sort_range(t_stack **stack_a, t_stack **stack_b, int max, int min)
 		else
 			while (i++ < down)
 				do_rra(stack_a);
-		align_b(stack_a, stack_b);
+		align_b(stack_b, (*stack_a)->node->index);
 		do_pb(stack_a, stack_b);
 	}
 }			

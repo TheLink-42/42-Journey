@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 21:56:11 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/26 12:06:54 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/27 13:47:16 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,20 @@ void	sort_small_stack(t_stack **stack_a, t_stack **stack_b)
 
 void	sort_big_stack(t_stack **stack_a, t_stack **stack_b)
 {
-	(void)stack_a;
-	(void)stack_b;
-	ft_printf("Got in sort_big\n");
+	int	i;
+	int	j;
+
+	i = (*stack_a)->size / 20;
+	j = 0;
+	while (i-- >= 0)
+	{
+		sort_range(stack_a, stack_b, j + 19, j);
+		j += 20;
+	}
+	while ((*stack_b)->node)
+		do_pa(stack_a, stack_b);
+	while ((*stack_a)->node->index != 0)
+		do_ra(stack_a);
 }
 
 void	sort(t_stack **stack_a, t_stack **stack_b)

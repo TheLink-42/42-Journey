@@ -6,31 +6,31 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:50:13 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/25 20:46:30 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/28 12:17:10 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../includes/psw.h"
 
-int	init_stack(t_stack **stack_a, t_stack **stack_b, char **argv)
+int	init_stack(t_stack **stack_a, t_stack **stack_b, char **argv, int pos)
 {
 	(*stack_a)->node = NULL;
 	(*stack_a)->size = 0;
 	(*stack_b)->node = NULL;
 	(*stack_b)->node = 0;
-	if (fill_stack(stack_a, argv))
+	if (fill_stack(stack_a, argv, pos))
 		return (-1);
 	fill_index(stack_a, 0, -2147483648);
 	return (0);
 }
 
-int	fill_stack(t_stack **stack, char **argv)
+int	fill_stack(t_stack **stack, char **argv, int pos)
 {
 	t_node	*node;
 	int		value;
 	int		i;
 
-	i = 1;
+	i = pos;
 	while (argv[i])
 	{
 		value = ft_atoi(argv[i]);

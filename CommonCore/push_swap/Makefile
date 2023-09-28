@@ -6,7 +6,7 @@
 #    By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 13:09:21 by jbaeza-c          #+#    #+#              #
-#    Updated: 2023/09/25 23:30:34 by jimmy            ###   ########.fr        #
+#    Updated: 2023/09/27 15:56:16 by jimmy            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,11 @@ SRCS = 	$(addprefix srcs/commands/,				\
 		push.c rev_rotate.c rotate.c swap.c)			\
 	$(addprefix srcs/stack_utils/,				\
 		add_back.c find_last.c new_node.c		\
-		search_first.c search_last.c add_front.c)				\
+		search_first.c search_last.c add_front.c	\
+		find_index.c free_node.c)						\
 	$(addprefix srcs/algorithm/,				\
 		check.c init.c main.c sort_three.c sort.c	\
-		sort_five.c)					
+		sort_five.c sort_range.c)					
 
 OBJS = $(SRCS:.c=.o)
 

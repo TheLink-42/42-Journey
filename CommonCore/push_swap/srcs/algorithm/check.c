@@ -6,27 +6,18 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:16:41 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/26 12:07:24 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/28 12:08:57 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../includes/psw.h"
 
-int	check_args(int argc, char **argv)
-{
-	if (argc < 2)
-		return (-1);
-	if (check_numbers(argv))
-		return (-1);
-	return (0);
-}
-
-int	check_numbers(char **argv)
+int	check_args(char **argv, int pos)
 {
 	int	i;
 	int	j;
 
-	i = 0;
+	i = pos - 1;
 	while (argv[++i])
 	{
 		j = 0;
