@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 18:42:24 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/27 16:04:36 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/28 12:28:17 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,14 @@
 void	free_stack(t_stack **stack)
 {
 	t_node	*node;
-	t_node	*aux;
 
 	if (!stack || !*stack)
 		return ;
-	node = (*stack)->node;
-	while (node)
+	while ((*stack)->node)
 	{
-		aux = node->next;
-		free(node);
-		node = aux;
+		node = (*stack)->node->next;
+		free((*stack)->node);
+		(*stack)->node = node;
 	}
-	free(stack);
+	free(*stack);
 }

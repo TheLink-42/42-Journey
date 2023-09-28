@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:04:42 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/28 12:23:26 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/28 15:34:55 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	pre_exec(int argc, char **argv, t_stack **stack_a, t_stack **stack_b)
 	char	**tab;
 
 	if (argc < 2)
-		return (-1);
+		return (1);
 	if (argc == 2)
 	{
 		tab = ft_split(argv[1], ' ');
@@ -64,18 +64,26 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	int		exec;
 
 	stack_a = (t_stack *)malloc(sizeof(t_stack));
 	stack_b = (t_stack *)malloc(sizeof(t_stack));
 	if (!stack_a || !stack_b)
 		return (error (&stack_a, &stack_b));
-	if (pre_exec(argc, argv, &stack_a, &stack_b))
+	exec = pre_exec(argc, argv, &stack_a, &stack_b);
+	if (exec == -1)
 		return (error(&stack_a, &stack_b));
+	else if (exec)
+	{
+		free_stack(&stack_a);
+		free_stack(&stack_b);
+		return (0);
+	}
 //	print_nodes_index(&a);	
 //	ft_printf("\n");
 	sort(&stack_a, &stack_b);
 //	ft_printf("\n");
-//	print_nodes_index(&a);
+//	print_nodes_index(&stack_a);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

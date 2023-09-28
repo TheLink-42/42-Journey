@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 11:43:52 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/27 13:02:55 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/28 15:24:46 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,25 @@
 
 void	sort_b(t_stack **stack)
 {
-//	(void)stack;
-//	ft_printf("Sorting b\n");
-
 	t_node	*node;
+	int	cnt;
 
+	cnt = 0;
 	node = (*stack)->node;
 	while (node->next)
 	{
 		if (node->index < node->next->index)
 		{
-			do_rb(stack);
+			if (cnt <= (*stack)->size)
+				do_rb(stack);
+			else
+				do_rrb(stack);
 			node = (*stack)->node;
+			cnt = 0;
 		}
 		else
 			node = node->next;
+		cnt++;
 	}
 }
 
@@ -53,8 +57,11 @@ void	align_b(t_stack **stack_b, int	index)
 	{
 		while (node->index != index)
 		{
+			if (search_first(stack_b, index, index) <= search_last(stack_b, index, index))
 				do_rb(stack_b);
-				node = (*stack_b)->node;
+			else
+				do_rrb(stack_b);
+			node = (*stack_b)->node;
 		}
 	}
 }
