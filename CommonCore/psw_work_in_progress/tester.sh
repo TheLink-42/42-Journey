@@ -2,6 +2,7 @@
 
 loops=1000
 size=100
+max_grade=701
 
 below=0
 max_result=0
@@ -22,7 +23,7 @@ for ((i = 0; i < $loops; i++)); do
 		min_result=$result
 	fi
 
-	if ((result < 701)); then
+	if ((result < max_grade)); then
 		below=$below+1
 	fi
 
