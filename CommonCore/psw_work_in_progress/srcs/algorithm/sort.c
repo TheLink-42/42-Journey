@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 21:56:11 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/01 16:11:34 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/01 21:44:54 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ void	sort_big_stack(t_stack **stack_a, t_stack **stack_b)
 	int	i;
 	int	j;
 
-	i = (*stack_a)->size / 15;
+	i = (*stack_a)->size / 17;
 	j = 3;
 	while (i-- >= 0)
 	{
-		sort_range(stack_a, stack_b, j + 14, j);
-		j += 15;
+		sort_range(stack_a, stack_b, j + 16, j);
+		j += 17;
 	}
 	sort_three(stack_a);
-	(*stack_b)->cost = get_cost(stack_b, (*stack_b)->size + 2);
+	(*stack_b)->cost = get_cost(stack_b, (*stack_b)->size - 1);
 	while ((*stack_b)->cost > 0)
 	{
 		do_rb(stack_b);
