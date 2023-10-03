@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 21:56:11 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/03 02:43:51 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/03 04:31:43 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	sort_big_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int	i;
 	int	j;
-	int	up;
-	int	down;
 
 	i = (*stack_a)->size / 17;
 	j = 3;
@@ -35,17 +33,20 @@ void	sort_big_stack(t_stack **stack_a, t_stack **stack_b)
 		j += 17;
 	}
 	sort_three(stack_a);
-	up = search_first(stack_b, (*stack_b)->size + 2, (*stack_b)->size + 2);
-	down = search_last(stack_b, (*stack_b)->size + 2, (*stack_b)->size + 2);
-	if (up <= down)
-		while ((*stack_b)->node->index != (*stack_b)->size + 2)
-			do_rb(stack_b);
-	else
-		while ((*stack_b)->node->index != (*stack_b)->size + 2)
-			do_rrb(stack_b);
+	(*stack_b)->cost = get_cost(stack_b, (*stack_b)->size - 1);
+	while ((*stack_b)->cost > 0)
+	{
+		do_rb(stack_b);
+		(*stack_b)->cost--;
+	}
+	while ((*stack_b)->cost < 0)
+	{
+		do_rrb(stack_b);
+		(*stack_b)->cost++;
+	}
 	while ((*stack_b)->node)
 		do_pa(stack_a, stack_b);
-	while (++i < 2)
+	while ((*stack_a)->node->index != 0)
 		do_rra(stack_a);
 }
 
