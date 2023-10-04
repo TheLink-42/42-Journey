@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_index.c                                       :+:      :+:    :+:   */
+/*   get_highest_index.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 03:38:15 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/04 03:40:01 by jimmy            ###   ########.fr       */
+/*   Created: 2023/10/04 03:40:14 by jimmy             #+#    #+#             */
+/*   Updated: 2023/10/04 03:41:58 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../includes/psw.h"
 
-int	find_index(t_stack **stack, int index)
+int	get_highest_index(t_stack **stack)
 {
+	int		index;
 	t_node	*node;
 
+	index = 0;
 	node = (*stack)->node;
 	while (node)
 	{
-		if (node->index == index)
-			return (1);
+		if (node->index > index)
+			index = node->index;
 		node = node->next;
 	}
-	return (0);
+	return (index);
 }

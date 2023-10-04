@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_index.c                                       :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 03:38:15 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/04 03:40:01 by jimmy            ###   ########.fr       */
+/*   Created: 2023/09/23 18:42:24 by jimmy             #+#    #+#             */
+/*   Updated: 2023/09/28 12:28:17 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../../includes/psw.h"
 
-int	find_index(t_stack **stack, int index)
+void	free_stack(t_stack **stack)
 {
 	t_node	*node;
 
-	node = (*stack)->node;
-	while (node)
+	if (!stack || !*stack)
+		return ;
+	while ((*stack)->node)
 	{
-		if (node->index == index)
-			return (1);
-		node = node->next;
+		node = (*stack)->node->next;
+		free((*stack)->node);
+		(*stack)->node = node;
 	}
-	return (0);
+	free(*stack);
 }

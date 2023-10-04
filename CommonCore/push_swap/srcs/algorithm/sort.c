@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 21:56:11 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/03 02:43:51 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/04 04:43:59 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,30 +23,20 @@ void	sort_small_stack(t_stack **stack_a, t_stack **stack_b)
 void	sort_big_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int	i;
-	int	j;
-	int	up;
-	int	down;
 
-	i = (*stack_a)->size / 17;
-	j = 3;
-	while (i-- >= 0)
-	{
-		sort_range(stack_a, stack_b, j + 16, j);
-		j += 17;
-	}
-	sort_three(stack_a);
-	up = search_first(stack_b, (*stack_b)->size + 2, (*stack_b)->size + 2);
-	down = search_last(stack_b, (*stack_b)->size + 2, (*stack_b)->size + 2);
-	if (up <= down)
-		while ((*stack_b)->node->index != (*stack_b)->size + 2)
-			do_rb(stack_b);
+	i = 0;
+	while (i++ < 2)
+		do_pb(stack_a, stack_b);
+	solve(stack_a, stack_b);
+	if (!is_unsorted(stack_a))
+		return ;
+	i = move_cost_a(stack_a, 0);
+	if (i < 0)
+		while (i++)
+			do_rra(stack_a);
 	else
-		while ((*stack_b)->node->index != (*stack_b)->size + 2)
-			do_rrb(stack_b);
-	while ((*stack_b)->node)
-		do_pa(stack_a, stack_b);
-	while (++i < 2)
-		do_rra(stack_a);
+		while (i--)
+			do_ra(stack_a);
 }
 
 void	sort(t_stack **stack_a, t_stack **stack_b)

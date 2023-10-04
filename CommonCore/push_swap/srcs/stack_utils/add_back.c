@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:19:42 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/26 12:16:19 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/04 15:27:54 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,17 @@ int	add_back(t_stack **stack, t_node *new_node)
 		return (0);
 	}
 	if (node && !node->next && node->value == new_node->value)
+	{
+		free(new_node);
 		return (-1);
+	}
 	while (node)
 	{
 		if (node->value == new_node->value)
+		{
+			free(new_node);
 			return (-1);
+		}
 		aux = node;
 		node = node->next;
 	}

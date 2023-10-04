@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:24:56 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/26 12:08:23 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/09/29 11:23:07 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ void	sort_three(t_stack **stack)
 	t_node	*second;
 	t_node	*third;
 
+	if ((*stack)->size == 2)
+	{
+		do_sa(stack);
+		return ;
+	}
 	first = (*stack)->node;
 	second = first->next;
 	third = second->next;
