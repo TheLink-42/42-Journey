@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:04:42 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/04 15:25:16 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/05 02:09:34 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,18 @@ int	free_tab(char **tab)
 		i++;
 	}
 	free(tab);
-	return (ERROR);
+	return (-1);
 }
 
 int	pre_exec(int argc, char **argv, t_stack **stack_a, t_stack **stack_b)
 {
 	char	**tab;
 
-	if (argc < 2)
-		return (1);
 	if (argc == 2)
 	{
 		tab = ft_split(argv[1], ' ');
+		if (!tab[0])
+			return (free_tab(tab));
 		if (check_args(tab, 0))
 			return (free_tab(tab));
 		if (init_stack(stack_a, stack_b, tab, 0))
@@ -56,26 +56,26 @@ int	pre_exec(int argc, char **argv, t_stack **stack_a, t_stack **stack_b)
 	else
 	{
 		if (check_args(argv, 1))
-			return (ERROR);
+			return (-1);
 		if (init_stack(stack_a, stack_b, argv, 1))
-			return (ERROR);
+			return (-1);
 	}
-	return (OK);
+	return (0);
 }
 
-int	error(t_stack **stack_a, t_stack **stack_b)
+int	check_malloc(t_stack **stack_a, t_stack **stack_b)
 {
 	if (!stack_a && !stack_b)
 	{
 		ft_putstr_fd("Error\n", 2);
-		return (OK);
+		return (0);
 	}
 	if (!stack_a)
 		free_stack(stack_b);
 	if (!stack_b)
 		free_stack(stack_a);
 	ft_putstr_fd("Error\n", 2);
-	return (OK);
+	return (0);
 }
 
 int	main(int argc, char **argv)
@@ -87,18 +87,16 @@ int	main(int argc, char **argv)
 	stack_a = (t_stack *)malloc(sizeof(t_stack));
 	stack_b = (t_stack *)malloc(sizeof(t_stack));
 	if (!stack_a || !stack_b)
-		return (error (&stack_a, &stack_b));
-	exec = pre_exec(argc, argv, &stack_a, &stack_b);
-	if (exec == ERROR)
-		return (error(&stack_a, &stack_b));
-	else if (exec)
+		return (check_malloc(&stack_a, &stack_b));
+	if (argc > 1)
 	{
-		free_stack(&stack_a);
-		free_stack(&stack_b);
-		return (OK);
+		exec = pre_exec(argc, argv, &stack_a, &stack_b);
+		if (exec == -1)
+			ft_putstr_fd("Error\n", 2);
+		else if (!exec)
+			sort(&stack_a, &stack_b);
 	}
-	sort(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
-	return (OK);
+	return (0);
 }
