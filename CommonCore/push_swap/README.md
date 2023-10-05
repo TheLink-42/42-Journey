@@ -9,6 +9,7 @@ stack.
 Ex: 
 
 `./push_swap "2 1 3"
+
 sa`
 
 ## Instructions
