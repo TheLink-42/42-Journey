@@ -14,9 +14,9 @@ total_result_100=0
 total_result_500=0
 
 logHeader "-----------------------------------\n"
-logHeader "|                                 |\n"
-logHeader "|     Size: 100    Loops: $loops     |\n"
-logHeader "|                                 |\n"
+logHeader "\n"
+logHeader "     Size: 100    Loops: $loops     \n"
+logHeader "\n"
 logHeader "-----------------------------------\n"
 log "\n"
 
@@ -78,14 +78,14 @@ fi
 log "\n\n"
 
 logHeader "-----------------------------------\n"
-logHeader "|                                 |\n"
-logHeader "|     Size: 500    Loops: $loops     |\n"
-logHeader "|                                 |\n"
+logHeader "\n"
+logHeader "     Size: 500    Loops: $loops     \n"
+logHeader "\n"
 logHeader "-----------------------------------\n"
 log "\n"
 
 for ((i = 0; i < $loops; i++)); do
-	numbers=$(ruby -e "puts (00..99).to_a.shuffle.join(' ')")
+	numbers=$(ruby -e "puts (00..499).to_a.shuffle.join(' ')")
     numbers_string="${numbers[*]}"
 
     result=$(./push_swap "$numbers_string" | wc -l)

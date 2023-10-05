@@ -44,9 +44,7 @@ in some cases (Tho every try I´ve made has been under 5500 instructions)
 
 In order to run the tester execute this command on your push_swap directory:
 
-`./tester/linux.sh 100`
-
-`./tester/mac.sh 100`
+`./_thelinkTest/tester.sh 100`
 
 It will execute your program (named push_swap) with 100 different sets of random numbers
 and return the highest and lowest number of instructions used and the average instructions needed to sort the stack.
