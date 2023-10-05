@@ -26,8 +26,20 @@ stack.
 
 ## Algorithm
 
-(Still working on it :memo:)
+(Working on it :memo:)
 
+### Performance of the Algorithm
+
+My push_swap sorts
+
+    3 numbers with maximum 3 instructions,
+    5 numbers with maximum 9 instructions,
+    100 numbers with maximum 654 instructions => 5 points,
+    500 numbers with maximum 5453 instructions => 5 points.
+
+The algorithm should be efficient enough to reach 100%. However the maximum instructions for 
+500 numbers are barely inside the limit and it might surpass for a few instructions
+in some cases (Tho every try I´ve made has been under 5500 instructions)
 ## Tester
 
 In order to run the tester execute this command on your push_swap directory:
