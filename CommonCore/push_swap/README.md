@@ -27,3 +27,14 @@ stack.
 ## Algorithm
 
 (Still working on it :memo:)
+
+## Tester
+
+In order to run the tester execute this command on your push_swap directory:
+
+`./tester/tester.sh 100`
+
+It will execute your program (named push_swap) with 100 different sets of random numbers
+and return the highest and lowest number of instructions used and the average instructions needed to sort the stack.
+It will return this information for both 100 and 500 numbers. If you want to change the
+amount of executions just change number 100 for any number you want.
