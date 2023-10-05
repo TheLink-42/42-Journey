@@ -6,7 +6,7 @@
 #    By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 13:09:21 by jbaeza-c          #+#    #+#              #
-#    Updated: 2023/10/05 01:51:59 by jimmy            ###   ########.fr        #
+#    Updated: 2023/10/05 17:08:08 by jbaeza-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ LIBFT = $(LIBFT_PATH)/libft.a
 
 CC = cc
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror -fsanitize=leak
+CFLAGS = -Wall -Wextra -Werror
 
 NAME = push_swap
 
