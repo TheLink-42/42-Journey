@@ -6,10 +6,7 @@ defined below. This program outputs the set of instructions to follow to sort th
 stack.
 
 
-Ex: 
-
-`./push_swap "2 1 3"\n
-sa`
+![Execution example](https://cdn.discordapp.com/attachments/800692244179845150/1159289397905211472/image.png?ex=65307b63&is=651e0663&hm=ab8b54324a917e8faab652725e6a99cb7640cddc3857f8caabb5b1c7a38338cd& "Execution example")
 
 ## Instructions
 
