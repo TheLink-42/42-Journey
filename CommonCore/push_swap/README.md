@@ -6,7 +6,7 @@ defined below. This program outputs the set of instructions to follow to sort th
 stack.
 
 
-![Execution example](https://cdn.discordapp.com/attachments/800692244179845150/1159289397905211472/image.png?ex=65307b63&is=651e0663&hm=ab8b54324a917e8faab652725e6a99cb7640cddc3857f8caabb5b1c7a38338cd& "Execution example")
+![Execution example](https://cdn.discordapp.com/attachments/800692244179845150/1159290120499892304/image.png?ex=65307c0f&is=651e070f&hm=f89fa3d4ff8aef9d9b51e58525adfd06912d69e1d6dc647cb8ff120251ed93c2& "Execution example")
 
 ## Instructions
 
