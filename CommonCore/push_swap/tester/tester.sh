@@ -22,7 +22,7 @@ logHeader "-----------------------------------\n"
 log "\n"
 
 for ((i = 0; i < $loops; i++)); do
-	numbers=($(shuf -i 1-100 -n 100 | tr '\n' ' '))
+	numbers=($(jot -r 1-100 -n 100 | tr '\n' ' '))
 	numbers_string="${numbers[*]}"
 
 	result=$(./push_swap "$numbers_string" | wc -l)
@@ -86,7 +86,7 @@ logHeader "-----------------------------------\n"
 log "\n"
 
 for ((i = 0; i < $loops; i++)); do
-	numbers=($(shuf -i 1-500 -n 500 | tr '\n' ' '))
+	numbers=($(jot -r 1-500 -n 500 | tr '\n' ' '))
 	numbers_string="${numbers[*]}"
 
 	result=$(./push_swap "$numbers_string" | wc -l)
