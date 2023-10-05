@@ -1,8 +1,15 @@
 # 42 Push_Swap
 
 Given a set of integers, sort it using a predefined set of instructions using
-two stacks. The instruction set is defined below. This program outputs a program
-in push_swap instructions that sorts the input integers.
+two stacks in the least amount of instructions possible. The instruction set is 
+defined below. This program outputs the set of instructions to follow to sort the
+stack.
+
+
+Ex: 
+
+`./push_swap "2 1 3"
+sa`
 
 ## Instructions
 
@@ -19,12 +26,6 @@ in push_swap instructions that sorts the input integers.
 | `rra` | Shifts all elements of stack a from top to bottom      |
 | `rrb` | Shifts all elements of stack b from top to bottom      |
 | `rrr` | Shifts all elements of both stacks from top to bottom  |
-
-## Objective
-
-Using the instruction set defined above, your program output should contain the sequence of instructions 
-to follow to sort the stack `stack a` with the least amount of instructions possible. You may use an 
-auxiliary stack `stack b` which must be empty by the end of the execution.
 
 ## Algorithm
 
