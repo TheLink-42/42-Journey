@@ -8,8 +8,7 @@ stack.
 
 Ex: 
 
-`./push_swap "2 1 3"
-
+`./push_swap "2 1 3"\n
 sa`
 
 ## Instructions
