@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./tester/colors.sh
+source ./_thelinkTest/colors.sh
 
 make all
 
