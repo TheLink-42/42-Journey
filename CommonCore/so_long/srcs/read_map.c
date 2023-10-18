@@ -6,30 +6,11 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:56:56 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/12 01:51:09 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/13 16:58:48 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/so_long.h"
-
-
-static void	ft_error(t_game *game, int n)
-{
-//	ft_free(game);
-	if (n == 0)
-		ft_printf("Caracteres no válidos\n");
-	if (n == 1)
-		ft_printf("Error en número de jugadores y/o salidas\n");
-	if (n == 2)
-		ft_printf("Fallo en los bordes laterales\n");
-	if (n == 3)
-		ft_printf("Fallo en los bordes horizontales\n");
-	if (n == 4)
-		ft_printf("Tablero no rectangular\n");
-	if (n == 5)
-		ft_printf("Fallo en lectura con gnl\n");
-	exit(0);
-}
 
 static void	adjust_lineflag(char *line, t_game *game)
 {
@@ -111,15 +92,15 @@ int	read_map(char *map, t_game *game)
 	char	*line;
 
 	fd = open(map, O_RDONLY);
-//	if (fd < 0)
-//		ft_free(game);
+	if (fd < 0)
+		ft_free(game);
 	game->lineflag = 2;
 	while (game->lineflag)
 	{
-		game->height++;
 		line = get_next_line(fd);
 		if (!line)
 			break;
+		game->height++;
 		if (game->lineflag == 2)
 			game->width = ft_strlen(line) - 1;
 		adjust_lineflag(line, game);
@@ -134,7 +115,7 @@ int	read_map(char *map, t_game *game)
 	check_vertical_limits(game);
 	check_line(game);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	t_game	*game;
@@ -146,4 +127,4 @@ int	main(int argc, char **argv)
 	read_map(argv[1], game);
 	ft_printf("%d\n", game->width);
 	return (0);
-}
+}*/

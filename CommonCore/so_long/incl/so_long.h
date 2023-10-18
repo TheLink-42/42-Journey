@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:45:11 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/12 00:46:00 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/18 10:35:32 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,9 @@
 # include "../libft/libft.h"
 # include "../mlx_linux/mlx.h"
 
-
-typedef enum e_tiletype
-{
-	EMPTY = '0',
-	WALL = '1',
-	COLLECTABLE = 'C',
-	PLAYER = 'P',
-	EXIT = 'E',
-}	t_tiletype;
+# ifndef IMG_SIZE
+#  define IMG_SIZE 64
+# endif
 
 typedef enum e_key
 {
@@ -41,44 +35,77 @@ typedef enum e_key
 
 typedef struct s_image
 {
-	void	*wall_up_right;
-	void	*wall_up;
-	void	*wall_up_left;
-	void	*wall_left;
-	void	*wall_down_left;
-	void	*wall_down;
-	void	*wall_down_right;
-	void	*wall_right;
-	void	*wall_block;
-	void	*empty;
-	void	*player_idle_left_0;
-	void	*player_idle_left_1;
-	void	*player_action_left;
-	void	*player_idle_back_0;
-	void	*player_idle_back_1;
-	void	*player_action_back;
-	void	*player_idle_right_0;
-	void	*player_idle_right_1;
-	void	*player_action_right;
-	void	*player_idle_front_0;
-	void	*player_idle_front_1;
-	void	*player_action_front;
-	void	*collectable;
-	void	*exit;
+	void	*up_r_0;
+	void	*up_r_1;
+	void	*up_0;
+	void	*up_1;
+	void	*up_l_0;
+	void	*up_l_1;
+	void	*left_0;
+	void	*left_1;
+	void	*down_l_0;
+	void	*down_l_1;
+	void	*down_0;
+	void	*down_1;
+	void	*down_r_0;
+	void	*down_r_1;
+	void	*right_0;
+	void	*right_1;
+	void	*block_0;
+	void	*block_1;
+	void	*land_0;
+	void	*land_1;
+	void	*fplayer_idle_0;
+	void	*fplayer_idle_1;
+	void	*fplayer_action;
+	void	*bplayer_idle_0;
+	void	*bplayer_idle_1;
+	void	*bplayer_action;
+	void	*lplayer_idle_0;
+	void	*lplayer_idle_1;
+	void	*lplayer_action;
+	void	*rplayer_idle_0;
+	void	*rplayer_idle_1;
+	void	*rplayer_action;
+	void	*item;
+	void	*open_exit;
+	void	*closed_exit;
+	int	width;
+	int	height;
 }	t_image;
+
+typedef struct s_terrain
+{
+	void	*up_right;
+	void	*up;
+	void	*up_left;
+	void	*left;
+	void	*down_left;
+	void	*down;
+	void	*down_right;
+	void	*right;
+	void	*block;
+	void	*land;
+	int	frame;
+}	t_terrain;
 
 typedef struct s_player
 {
-	void	*current_image;
-	int	frame_count;
+	void	*front;
+	void	*back;
+	void	*right;
+	void	*left;
 	int	facing;
+	int	frame;
 }	t_player;
 
 typedef struct s_game
 {
 	void		*mlx;
-	void		*window;
-	t_image		images;
+	void		*win;
+	t_image		*img;
+	t_terrain	*terrain;
+	t_player	*player;
 	int		width;
 	int		height;
 	int		num_player;
@@ -87,6 +114,20 @@ typedef struct s_game
 	int		num_items;
 	int		lineflag;
 	char		*map_line;
+	int		moves;
 }	t_game;
+
+//FUNCTIONS
+//
+
+void	ft_error(t_game *game, int n);
+int		ft_free(t_game *game);
+
+void	init_img(t_game *game);
+void	print_map(t_game *game);
+void	print_walls(t_game *game, int x, int y);
+int		read_map(char *map, t_game *game);
+int		key_press(int key, t_game *game);
+int		game_exit(t_game *game);
 
 #endif
