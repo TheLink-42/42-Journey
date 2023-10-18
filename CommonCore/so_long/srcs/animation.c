@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 16:21:15 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/18 10:35:22 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/18 12:53:04 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,5 @@ int	ft_animation(t_game *game)
 {
 	player_animation(game->img, game->player);
 	terrain_animation(game->img, game->terrain);
-//	item_animation(game);
 	return (0);
 }

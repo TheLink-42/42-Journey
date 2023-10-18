@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 14:07:43 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/14 16:12:32 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/18 12:54:06 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 static void	move_w(t_game *game)
 {
 	int		i;
-//	t_image	*img;
 
 	i = 0;
-//	img = game->images;
 	while (game->map_line[i] != 'P')
 		i++;
 	if (game->map_line[i - game->width - 1] == '1')
@@ -38,10 +36,8 @@ static void	move_w(t_game *game)
 static void	move_a(t_game *game)
 {
 	int		i;
-//	t_image	*img;
 
 	i = 0;
-//	img = game->images;
 	while (game->map_line[i] != 'P')
 		i++;
 	if (game->map_line[i - 1] == '1')
@@ -61,10 +57,8 @@ static void	move_a(t_game *game)
 static void	move_s(t_game *game)
 {
 	int		i;
-//	t_image	*img;
 
 	i = 0;
-//	img = game->images;
 	while (game->map_line[i] != 'P')
 		i++;
 	if (game->map_line[i + game->width + 1] == '1')
@@ -84,10 +78,8 @@ static void	move_s(t_game *game)
 static void	move_d(t_game *game)
 {
 	int		i;
-//	t_image	*img;
 
 	i = 0;
-//	img = game->images;
 	while (game->map_line[i] != 'P')
 		i++;
 	if (game->map_line[i + 1] == '1')

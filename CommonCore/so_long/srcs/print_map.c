@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:04:43 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/15 18:41:33 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/18 12:56:13 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	get_pos(int r, int i, t_game *game)
 {
-	int		x;
-	int		y;
+	int			x;
+	int			y;
 	t_image		*img;
 	t_terrain	*ter;
 
@@ -24,13 +24,16 @@ static void	get_pos(int r, int i, t_game *game)
 	img = game->images;
 	ter = game->terrain;
 	if (r == 'C')
-		mlx_put_image_to_window(game->mlx, game->win, img->collectable, 64 * x, 64 * y);
+		mlx_put_image_to_window(game->mlx, game->win,
+			img->collectable, 64 * x, 64 * y);
 	if (r == 'E')
-		mlx_put_image_to_window(game->mlx, game->win, img->exit, 64 * x, 64 * y);
+		mlx_put_image_to_window(game->mlx, game->win, img->exit,
+			64 * x, 64 * y);
 	if (r == '1')
 		print_walls(game, x, y);
 	if (r == '0')
-		mlx_put_image_to_window(game->mlx, game->win, ter->land; 64 * x, 64 * y);
+		mlx_put_image_to_window(game->mlx, game->win, ter->land,
+			64 * x, 64 * y);
 	if (r == 'P')
 		print_player(game, x, y);
 }

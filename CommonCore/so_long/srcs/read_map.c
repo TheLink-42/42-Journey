@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:56:56 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/13 16:58:48 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/18 12:57:57 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int	read_map(char *map, t_game *game)
 	{
 		line = get_next_line(fd);
 		if (!line)
-			break;
+			break ;
 		game->height++;
 		if (game->lineflag == 2)
 			game->width = ft_strlen(line) - 1;
@@ -107,8 +107,7 @@ int	read_map(char *map, t_game *game)
 		if (ft_strlen(line) - 1 != game->width)
 			ft_error(game, 4);
 		game->map_line = gnl_strjoin(game->map_line, line);
-		if (line)
-			free(line);
+		free(line);
 	}
 	close(fd);
 	check_horizontal_limits(game);

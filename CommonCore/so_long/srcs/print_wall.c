@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:26:34 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/15 17:53:08 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/18 12:56:48 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ void	print_walls(t_game *game, int x, int y)
 	else if (!y || y == game->height - 1)
 		print_horizontal(game, game->terrain, x, y);
 	else
-		mlx_put_image_to_window(game->mlx, game->win, game->terrain->block, x, y);
+		mlx_put_image_to_window(game->mlx, game->win,
+			game->terrain->block, x, y);
 }
