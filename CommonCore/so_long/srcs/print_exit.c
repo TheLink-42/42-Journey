@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_exit.c                                        :+:      :+:    :+:   */
+/*   print_exit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
+/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 16:08:35 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/20 12:11:20 by jimmy            ###   ########.fr       */
+/*   Created: 2023/10/20 19:40:25 by jbaeza-c          #+#    #+#             */
+/*   Updated: 2023/10/20 19:45:20 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/so_long.h"
 
-int	game_exit(t_game *game)
+void	print_exit(t_game *game, int x, int y)
 {
+	t_image	*img;
+
+	img = game->img;
 	if (!game->num_items)
-	{
-		mlx_destroy_window(game->mlx, game->win);
-		ft_free(game);
-	}
-	return (1);
+		mlx_put_image_to_window(game->mlx, game->win,
+			img->open_exit, x, y);
+	else
+		mlx_put_image_to_window(game->mlx, game->win,
+			img->closed_exit, x, y);
 }

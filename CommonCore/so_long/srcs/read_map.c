@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
+/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:56:56 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/18 12:57:57 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/10/20 19:52:44 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int	read_map(char *map, t_game *game)
 		if (game->lineflag == 2)
 			game->width = ft_strlen(line) - 1;
 		adjust_lineflag(line, game);
-		if (ft_strlen(line) - 1 != game->width)
+		if ((int)ft_strlen(line) - 1 != game->width)
 			ft_error(game, 4);
 		game->map_line = gnl_strjoin(game->map_line, line);
 		free(line);
@@ -113,17 +113,5 @@ int	read_map(char *map, t_game *game)
 	check_horizontal_limits(game);
 	check_vertical_limits(game);
 	check_line(game);
-}
-/*
-int	main(int argc, char **argv)
-{
-	t_game	*game;
-
-	game = (t_game *)malloc(sizeof(t_game));
-	(void)argc;
-	game->num_player = 0;
-	game->num_exit = 0;
-	read_map(argv[1], game);
-	ft_printf("%d\n", game->width);
 	return (0);
-}*/
+}

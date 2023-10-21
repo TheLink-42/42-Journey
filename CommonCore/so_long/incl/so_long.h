@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
+/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:45:11 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/18 10:35:32 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/20 19:44:52 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include "../libft/libft.h"
 # include "../mlx_linux/mlx.h"
 
-# ifndef IMG_SIZE
-#  define IMG_SIZE 64
+# ifndef SIZE
+#  define SIZE 64
 # endif
 
 typedef enum e_key
@@ -35,20 +35,20 @@ typedef enum e_key
 
 typedef struct s_image
 {
-	void	*up_r_0;
-	void	*up_r_1;
+	void	*up_right_0;
+	void	*up_right_1;
 	void	*up_0;
 	void	*up_1;
-	void	*up_l_0;
-	void	*up_l_1;
+	void	*up_left_0;
+	void	*up_left_1;
 	void	*left_0;
 	void	*left_1;
-	void	*down_l_0;
-	void	*down_l_1;
+	void	*down_left_0;
+	void	*down_left_1;
 	void	*down_0;
 	void	*down_1;
-	void	*down_r_0;
-	void	*down_r_1;
+	void	*down_right_0;
+	void	*down_right_1;
 	void	*right_0;
 	void	*right_1;
 	void	*block_0;
@@ -123,11 +123,15 @@ typedef struct s_game
 void	ft_error(t_game *game, int n);
 int		ft_free(t_game *game);
 
+void	init_structs(t_game *game);
 void	init_img(t_game *game);
 void	print_map(t_game *game);
+void	print_exit(t_game *game, int x, int y);
 void	print_walls(t_game *game, int x, int y);
+void	print_player(t_game *game, int x, int y);
 int		read_map(char *map, t_game *game);
-int		key_press(int key, t_game *game);
+int		ft_key_press(int key, t_game *game);
+int		ft_animation(t_game *game);
 int		game_exit(t_game *game);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 16:21:15 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/18 12:53:04 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/10/20 14:26:29 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,15 @@ static void	player_animation(t_image *img, t_player *npc)
 
 int	ft_animation(t_game *game)
 {
-	player_animation(game->img, game->player);
-	terrain_animation(game->img, game->terrain);
+	static int	i = 0;
+
+	i++;
+	if (i == 15000)
+	{
+		player_animation(game->img, game->player);
+		terrain_animation(game->img, game->terrain);
+		print_map(game);
+		i = 0;
+	}
 	return (0);
 }

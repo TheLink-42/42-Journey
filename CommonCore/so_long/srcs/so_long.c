@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
+/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:50:21 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/18 12:58:35 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/10/20 19:54:31 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,34 @@ static void	init_game_data(t_game *game, char *map)
 {
 	read_map(map, game);
 	init_structs(game);
-	game->window = mlx_new_window(game->mlx, game->width * 64,
-			game->height * 64, "so_long");
+	game->win = mlx_new_window(game->mlx, game->width * SIZE,
+			game->height * SIZE, "so_long");
 	print_map(game);
+}
+
+void	so_long(int argc, char **argv)
+{
+	t_game	*game;
+
+	(void)argc;
+	game = (t_game *)malloc(sizeof(t_game));
+	if (!game)
+		return ;
+	game->mlx = mlx_init();
+	init_game_data(game, argv[1]);
+	mlx_key_hook(game->win, ft_key_press, game);
+	mlx_hook(game->win, 17, 0, ft_free, game);
+	mlx_loop_hook(game->mlx, ft_animation, game);
+	mlx_loop(game->mlx);
 }
 
 int	main(int argc, char **argv)
 {
-	t_game	*game;
-
 	if (argc < 2)
+	{
+		ft_printf("Error. No se ha introducido ningún mapa");
 		return (0);
-	game = (t_game *)malloc(sizeof(t_game));
-	if (!game)
-		return (1);
-	game->mlx = mlx_init();
-	init_game_data(game, argv[1]);
-	mlx_key_hook(game->window, key_press, game);
-	mlx_hook(game->window, 17, 0, ft_free, game);
-	mlx_loop(game->mlx);
-	ft_free(game);
+	}
+	so_long(argc, argv);
 	return (0);
 }

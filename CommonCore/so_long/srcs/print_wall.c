@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:26:34 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/18 12:56:48 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:20:12 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,44 @@
 
 static void	print_corners(t_game *game, t_terrain *wall, int x, int y)
 {
-	x *= IMG_SIZE;
-	y *= IMG_SIZE;
+	x *= SIZE;
+	y *= SIZE;
 	if (!x && !y)
-		mlx_put_image_to_window(game->mlx, game->win, wall->up_l, x, y);
+		mlx_put_image_to_window(game->mlx, game->win,
+			wall->up_left, x, y);
 	else if (!x)
-		mlx_put_image_to_window(game->mlx, game->win, wall->down_l, x, y);
+		mlx_put_image_to_window(game->mlx, game->win,
+			wall->down_left, x, y);
 	else if (!y)
-		mlx_put_image_to_window(game->mlx, game->win, wall->up_r, x, y);
+		mlx_put_image_to_window(game->mlx, game->win,
+			wall->up_right, x, y);
 	else
-		mlx_put_image_to_window(game->mlx, game->win, wall->down_r, x, y);
+		mlx_put_image_to_window(game->mlx, game->win,
+			wall->down_right, x, y);
 }
 
 static void	print_vertical(t_game *game, t_terrain *wall, int x, int y)
 {
-	x *= IMG_SIZE;
-	y *= IMG_SIZE;
+	x *= SIZE;
+	y *= SIZE;
 	if (!x)
-		mlx_put_image_to_window(game->mlx, game->win, wall->left, x, y);
+		mlx_put_image_to_window(game->mlx, game->win,
+			wall->left, x, y);
 	else
-		mlx_put_image_to_window(game->mlx, game->win, wall->right, x, y);
+		mlx_put_image_to_window(game->mlx, game->win,
+			wall->right, x, y);
 }
 
 static void	print_horizontal(t_game *game, t_terrain *wall, int x, int y)
 {
-	x *= IMG_SIZE;
-	y *= IMG_SIZE;
+	x *= SIZE;
+	y *= SIZE;
 	if (!y)
-		mlx_put_image_to_window(game->mlx, game->win, wall->up, x, y);
+		mlx_put_image_to_window(game->mlx, game->win,
+			wall->up, x, y);
 	else
-		mlx_put_image_to_window(game->mlx, game->win, wall->down, x, y);
+		mlx_put_image_to_window(game->mlx, game->win,
+			wall->down, x, y);
 }
 
 void	print_walls(t_game *game, int x, int y)
