@@ -19,6 +19,7 @@ Feel free to use and implement my code as much as you need to.
 3. [GET_NEXT_LINE](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/get_next_line) 📜
 4. [PUSH_SWAP](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/push_swap) 🔋
 5. [PIPEX](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/pipex) 🔧
+6. [SO_LONG](https://github.com/TheLink-42/42-Journey/tree/main/CommonCore/so_long)
 
 ## Piscine 🏊
 1. [SHELL](https://github.com/Afromaaaan/42-Journey/tree/main/Piscine/SHELL)
