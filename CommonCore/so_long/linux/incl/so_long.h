@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:45:11 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/22 21:46:43 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/26 08:13:41 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include "../libft/libft.h"
-# include "../mlx_linux/mlx.h"
+# include "../mlx/mlx.h"
 
 # ifndef SIZE
 #  define SIZE 64
