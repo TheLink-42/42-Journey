@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:31:55 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/23 14:27:23 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:29:51 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void	init_terrain_img_aux(t_game *game, t_image *img)
 	img->up_1 = mlx_xpm_file_to_image(game->mlx,
 			"imgs/up_1.xpm", &img->width, &img->height);
 	img->up_left_1 = mlx_xpm_file_to_image(game->mlx,
-			"imgs/up_left_1.xpm", &img->width, &img->height);
+			"imgs/item.xpm", &img->width, &img->height);
 	img->left_1 = mlx_xpm_file_to_image(game->mlx,
 			"imgs/left_1.xpm", &img->width, &img->height);
 	img->down_left_1 = mlx_xpm_file_to_image(game->mlx,
@@ -81,7 +81,7 @@ static void	init_terrain_img(t_game *game, t_image *img)
 	img->up_0 = mlx_xpm_file_to_image(game->mlx,
 			"imgs/up_0.xpm", &img->width, &img->height);
 	img->up_left_0 = mlx_xpm_file_to_image(game->mlx,
-			"imgs/up_left_0.xpm", &img->width, &img->height);
+			"imgs/item.xpm", &img->width, &img->height);
 	img->left_0 = mlx_xpm_file_to_image(game->mlx,
 			"imgs/left_0.xpm", &img->width, &img->height);
 	img->down_left_0 = mlx_xpm_file_to_image(game->mlx,

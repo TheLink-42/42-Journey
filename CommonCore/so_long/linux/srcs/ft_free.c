@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:37:30 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/23 14:14:49 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:34:09 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	ft_free_img_aux(t_game *game, t_image *img)
 {
-	(void)game;
 	mlx_destroy_image(game->mlx, img->up_right_1);
 	mlx_destroy_image(game->mlx, img->up_1);
 	mlx_destroy_image(game->mlx, img->up_left_1);
@@ -81,8 +80,9 @@ int	ft_free(t_game *game)
 	free(game->img);
 	free(game->terrain);
 	free(game->player);
+	mlx_clear_window(game->mlx, game->win);
 	mlx_destroy_window(game->mlx, game->win);
-	//mlx_destroy_display(game->mlx);
+	mlx_destroy_display(game->mlx);
 	if (game)
 		free(game);
 	exit(0);

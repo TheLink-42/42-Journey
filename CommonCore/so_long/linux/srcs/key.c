@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 14:07:43 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/22 22:45:08 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/10/26 18:33:28 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,10 +115,7 @@ static void	move_d(t_game *game)
 int	ft_key_press(int key, t_game *game)
 {
 	if (key == KEY_ESC)
-	{
-		mlx_destroy_window(game->mlx, game->win);
 		ft_free(game);
-	}
 	if (key == KEY_W || key == KEY_UP)
 		move_w(game);
 	if (key == KEY_A || key == KEY_LEFT)
