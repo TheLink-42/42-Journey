@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
+/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:37:30 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/20 19:27:45 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/23 14:14:49 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,32 @@ static void	ft_free_img(t_game *game, t_image *img)
 	ft_free_img_aux(game, img);
 }
 
+static void	ft_free_matrix(char **matrix)
+{
+	int	i;
+
+	i = 0;
+	while (matrix[i])
+	{
+		free(matrix[i]);
+		i++;
+	}
+	free(matrix[i]);
+	free(matrix);
+}
+
 int	ft_free(t_game *game)
 {
 	if (game->map_line)
 		free(game->map_line);
+	if (game->matrix)
+		ft_free_matrix(game->matrix);
 	ft_free_img(game, game->img);
 	free(game->img);
 	free(game->terrain);
 	free(game->player);
 	mlx_destroy_window(game->mlx, game->win);
+	//mlx_destroy_display(game->mlx);
 	if (game)
 		free(game);
 	exit(0);

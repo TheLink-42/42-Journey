@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:56:56 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/20 19:52:44 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/10/22 21:47:12 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	check_horizontal_limits(t_game *game)
 	}
 }
 
-static void	check_vertical_limits(t_game *game)
+static void	check_limits(t_game *game)
 {
 	int	i;
 	int	len;
@@ -61,6 +61,7 @@ static void	check_vertical_limits(t_game *game)
 			ft_error(game, 2);
 		i += game->width + 1;
 	}
+	check_horizontal_limits(game);
 }
 
 static void	check_line(t_game *game)
@@ -110,8 +111,8 @@ int	read_map(char *map, t_game *game)
 		free(line);
 	}
 	close(fd);
-	check_horizontal_limits(game);
-	check_vertical_limits(game);
+	check_limits(game);
 	check_line(game);
+	game->matrix = ft_split(game->map_line, '\n');
 	return (0);
 }

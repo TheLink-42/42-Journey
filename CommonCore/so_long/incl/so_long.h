@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:45:11 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/20 19:44:52 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/10/22 21:46:43 by jimmy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ typedef struct s_game
 	int		num_items;
 	int		lineflag;
 	char		*map_line;
+	char		**matrix;
 	int		moves;
 }	t_game;
 

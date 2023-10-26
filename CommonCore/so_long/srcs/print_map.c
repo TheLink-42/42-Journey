@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
+/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:04:43 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/20 14:48:17 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/23 14:30:25 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ static void	get_pos(int r, int i, t_game *game)
 	t_image		*img;
 	t_terrain	*ter;
 
-	x = (i % (game->width + 1));
-	y = (i / (game->width + 1));
+	x = (i % game->width);
+	y = (i / game->width);
+//	ft_printf("Imprimimos la pos: %d,%d\n", x, y);
 	img = game->img;
 	ter = game->terrain;
 	if (r == 'C')
@@ -40,21 +41,23 @@ static void	get_pos(int r, int i, t_game *game)
 void	print_map(t_game *game)
 {
 	int	i;
+	int	w;
 
+	w = game->width;
 	i = 0;
-	while (game->map_line[i])
+	while (game->matrix[i / w])
 	{
-		if (game->map_line[i] == 'C')
+		if (game->matrix[i / w][i % w] == 'C')
 			get_pos('C', i, game);
-		else if (game->map_line[i] == 'E')
+		else if (game->matrix[i / w][i % w] == 'E')
 			get_pos('E', i, game);
-		else if (game->map_line[i] == 'P')
+		else if (game->matrix[i / w][i % w] == 'P')
 			get_pos('P', i, game);
-		else if (game->map_line[i] == '1')
+		else if (game->matrix[i / w][i % w] == '1')
 			get_pos('1', i, game);
-		else if (game->map_line[i] == '0')
+		else if (game->matrix[i / w][i % w] == '0')
 			get_pos('0', i, game);
-		else if (game->map_line[i] != '\n')
+		else
 			exit(0);
 		i++;
 	}

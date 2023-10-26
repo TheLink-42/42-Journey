@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
+/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 14:07:43 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/20 15:52:18 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/22 22:45:08 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,24 @@
 static void	move_w(t_game *game)
 {
 	int		i;
+	int		w;
 
 	i = 0;
-	while (game->map_line[i] != 'P')
+	w = game->width;
+	game->player->facing = 1;
+	print_map(game);
+	while (game->matrix[i / w][i % w] != 'P')
 		i++;
-	if (game->map_line[i - game->width - 1] == '1')
+	if (game->matrix[(i - w) / w][i% w] == '1')
 		return ;
-	game->moves++;
-	if (game->map_line[i - game->width - 1] == 'C')
+	if (game->matrix[(i - w) / w][i % w] == 'C')
 		game->num_items--;
-	if (game->map_line[i - game->width - 1] == 'E')
+	if (game->matrix[(i - w) / w][i % w] == 'E')
 		if (game_exit(game))
 			return ;
-	game->map_line[i] = '0';
-	game->map_line[i - game->width - 1] = 'P';
-	game->player->facing = 1;
+	game->matrix[i / w][i % w] = '0';
+	game->matrix[(i - w) / w][i % w] = 'P';
+	game->moves++;
 	ft_printf("Moves: %d\n", game->moves);
 	print_map(game);
 }
@@ -37,21 +40,24 @@ static void	move_w(t_game *game)
 static void	move_a(t_game *game)
 {
 	int		i;
+	int		w;
 
 	i = 0;
-	while (game->map_line[i] != 'P')
+	w = game->width;
+	game->player->facing = 2;
+	print_map(game);
+	while (game->matrix[i / w][i % w] != 'P')
 		i++;
-	if (game->map_line[i - 1] == '1')
+	if (game->matrix[i / w][(i - 1) % w] == '1')
 		return ;
-	game->moves++;
-	if (game->map_line[i - 1] == 'C')
+	if (game->matrix[i / w][(i - 1) % w] == 'C')
 		game->num_items--;
-	if (game->map_line[i - 1] == 'E')
+	if (game->matrix[i / w][(i - 1) % w] == 'E')
 		if (game_exit(game))
 			return ;
-	game->map_line[i] = '0';
-	game->map_line[i - 1] = 'P';
-	game->player->facing = 2;
+	game->matrix[i / w][i % w] = '0';
+	game->matrix[i / w][(i - 1) % w] = 'P';
+	game->moves++;
 	ft_printf("Moves: %d\n", game->moves);
 	print_map(game);
 }
@@ -59,43 +65,49 @@ static void	move_a(t_game *game)
 static void	move_s(t_game *game)
 {
 	int		i;
+	int		w;
 
 	i = 0;
-	while (game->map_line[i] != 'P')
+	w = game->width;
+	game->player->facing = 0;
+	print_map(game);
+	while (game->matrix[i / w][i % w] != 'P')
 		i++;
-	if (game->map_line[i + game->width + 1] == '1')
+	if (game->matrix[(i + w) / w][i% w] == '1')
 		return ;
-	game->moves++;
-	if (game->map_line[i + game->width + 1] == 'C')
+	if (game->matrix[(i + w) / w][i % w] == 'C')
 		game->num_items--;
-	if (game->map_line[i + game->width + 1] == 'E')
+	if (game->matrix[(i + w) / w][i % w] == 'E')
 		if (game_exit(game))
 			return ;
-	game->map_line[i] = '0';
-	game->map_line[i + game->width + 1] = 'P';
-	game->player->facing = 0;
+	game->matrix[i / w][i % w] = '0';
+	game->matrix[(i + w) / w][i % w] = 'P';
+	game->moves++;
 	ft_printf("Moves: %d\n", game->moves);
 	print_map(game);
 }
 
 static void	move_d(t_game *game)
 {
-	int		i;
+	int	i;
+	int	w;
 
 	i = 0;
-	while (game->map_line[i] != 'P')
+	w = game->width;
+	game->player->facing = 3;
+	print_map(game);
+	while (game->matrix[i / w][i % w] != 'P')
 		i++;
-	if (game->map_line[i + 1] == '1')
+	if (game->matrix[i / w][(i + 1) % w] == '1')
 		return ;
-	game->moves++;
-	if (game->map_line[i + 1] == 'C')
+	if (game->matrix[i / w][(i + 1) % w] == 'C')
 		game->num_items--;
-	if (game->map_line[i + 1] == 'E')
+	if (game->matrix[i / w][(i + 1) % w] == 'E')
 		if (game_exit(game))
 			return ;
-	game->map_line[i] = '0';
-	game->map_line[i + 1] = 'P';
-	game->player->facing = 3;
+	game->matrix[i / w][i % w] = '0';
+	game->matrix[i / w][(i + 1) % w] = 'P';
+	game->moves++;
 	ft_printf("Moves: %d\n", game->moves);
 	print_map(game);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   animation.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
+/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 16:21:15 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/20 14:26:29 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/23 14:10:37 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	ft_animation(t_game *game)
 	static int	i = 0;
 
 	i++;
-	if (i == 15000)
+	if (i == 10000)
 	{
 		player_animation(game->img, game->player);
 		terrain_animation(game->img, game->terrain);
