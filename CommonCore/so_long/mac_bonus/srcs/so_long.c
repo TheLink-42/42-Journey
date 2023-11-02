@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:50:21 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/26 08:44:00 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:44:51 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,9 @@ static void	init_game_data(t_game *game, char *map)
 {
 	init_structs(game);
 	read_map(map, game);
-	ft_printf("Read_map OK\n");
-//	init_structs(game);
-	ft_printf("Init_structs OK\n");
 	game->win = mlx_new_window(game->mlx, game->width * SIZE,
 			game->height * SIZE, "so_long");
 	print_map(game);
-	ft_printf("Read_map OK\n");
 }
 
 void	so_long(int argc, char **argv)

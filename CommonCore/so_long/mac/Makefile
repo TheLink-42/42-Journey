@@ -6,13 +6,13 @@
 #    By: jbaeza-c <jbaeza-c@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 08:18:10 by jbaeza-c          #+#    #+#              #
-#    Updated: 2023/10/26 08:48:12 by jbaeza-c         ###   ########.fr        #
+#    Updated: 2023/11/02 19:06:49 by jbaeza-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = $(addprefix srcs/, animation.c game_exit.c key.c print_player.c	\
+SRCS = $(addprefix srcs/, game_exit.c key.c	\
 		so_long.c ft_error.c image.c print_exit.c print_wall.c			\
-		ft_free.c init_structs.c print_map.c read_map.c)
+		ft_free.c print_map.c read_map.c)
 
 OBJS = $(SRCS:.c=.o)
 

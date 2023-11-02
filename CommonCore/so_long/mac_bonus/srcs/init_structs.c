@@ -6,7 +6,7 @@
 /*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 17:05:35 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/26 08:51:39 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:43:02 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static void	init_terrain(t_game *game)
 	ter->right = img->right_0;
 	ter->block = img->block_0;
 	ter->land = img->land_0;
+	ter->frame = 0;
 }
 
 static void	init_player(t_game *game)
@@ -43,6 +44,7 @@ static void	init_player(t_game *game)
 	npc->right = img->rplayer_idle_0;
 	npc->left = img->lplayer_idle_0;
 	npc->facing = 0;
+	npc->frame = 0;
 }
 
 void	init_structs(t_game *game)
@@ -53,8 +55,12 @@ void	init_structs(t_game *game)
 	init_img(game);
 	init_terrain(game);
 	init_player(game);
+	game->width = 0;
+	game->height = 0;
 	game->num_player = 0;
 	game->num_exit = 0;
 	game->num_walls = 0;
 	game->num_items = 0;
+	game->map_line = NULL;
+	game->moves = 0;
 }

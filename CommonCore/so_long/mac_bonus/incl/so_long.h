@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:45:11 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/26 09:41:03 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/02 19:40:53 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef enum e_key
 	KEY_DOWN = 65364,
 	KEY_LEFT = 65361,
 	KEY_RIGHT = 65363,
-	KEY_ESC = 65307,
+	KEY_ESC = 53,
 }	t_key;
 
 typedef struct s_image

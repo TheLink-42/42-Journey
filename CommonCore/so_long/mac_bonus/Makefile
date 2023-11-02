@@ -6,7 +6,7 @@
 #    By: jbaeza-c <jbaeza-c@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 08:18:10 by jbaeza-c          #+#    #+#              #
-#    Updated: 2023/10/26 08:48:12 by jbaeza-c         ###   ########.fr        #
+#    Updated: 2023/11/02 19:45:20 by jbaeza-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJS = $(SRCS:.c=.o)
 
 NAME = so_long
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 LINKS = -framework OpenGL -framework AppKit
 RM = rm -rf
 
