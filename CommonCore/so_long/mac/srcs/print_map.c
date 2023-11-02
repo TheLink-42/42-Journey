@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:04:43 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/23 14:30:25 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/10/29 00:16:19 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@ static void	get_pos(int r, int i, t_game *game)
 	int			x;
 	int			y;
 	t_image		*img;
-	t_terrain	*ter;
 
 	x = (i % game->width);
 	y = (i / game->width);
 //	ft_printf("Imprimimos la pos: %d,%d\n", x, y);
 	img = game->img;
-	ter = game->terrain;
 	if (r == 'C')
 		mlx_put_image_to_window(game->mlx, game->win,
 			img->item, SIZE * x, SIZE * y);
@@ -32,10 +30,11 @@ static void	get_pos(int r, int i, t_game *game)
 	if (r == '1')
 		print_walls(game, x, y);
 	if (r == '0')
-		mlx_put_image_to_window(game->mlx, game->win, ter->land,
+		mlx_put_image_to_window(game->mlx, game->win, img->land,
 			SIZE * x, SIZE * y);
 	if (r == 'P')
-		print_player(game, SIZE * x, SIZE * y);
+		mlx_put_image_to_window(game->mlx, game->win,
+			img->player, SIZE * x, SIZE * y);
 }
 
 void	print_map(t_game *game)

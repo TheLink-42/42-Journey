@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_player.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
+/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 17:39:07 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/20 13:59:03 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/31 16:47:15 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,8 @@ void	print_player(t_game *game, int x, int y)
 	t_player	*npc;
 
 	npc = game->player;
-	if (!npc->facing)
-		mlx_put_image_to_window(game->mlx, game->win, npc->front, x, y);
-	if (npc->facing == 1)
-		mlx_put_image_to_window(game->mlx, game->win, npc->back, x, y);
-	if (npc->facing == 2)
+	if (npc->facing == LEFT)
 		mlx_put_image_to_window(game->mlx, game->win, npc->left, x, y);
-	if (npc->facing == 3)
+	if (npc->facing == RIGHT)
 		mlx_put_image_to_window(game->mlx, game->win, npc->right, x, y);
 }

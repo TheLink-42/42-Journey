@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_structs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
+/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 17:05:35 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/20 12:14:40 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/10/31 16:44:55 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static void	init_terrain(t_game *game)
 	ter->right = img->right_0;
 	ter->block = img->block_0;
 	ter->land = img->land_0;
+	ter->frame = 0;
 }
 
 static void	init_player(t_game *game)
@@ -38,11 +39,10 @@ static void	init_player(t_game *game)
 
 	npc = game->player;
 	img = game->img;
-	npc->front = img->fplayer_idle_0;
-	npc->back = img->bplayer_idle_0;
-	npc->right = img->rplayer_idle_0;
-	npc->left = img->lplayer_idle_0;
-	npc->facing = 0;
+	npc->right = img->idle_player_r_0;
+	npc->left = img->idle_player_l_0;
+	npc->facing = RIGHT;
+	npc->frame = 0;
 }
 
 void	init_structs(t_game *game)
