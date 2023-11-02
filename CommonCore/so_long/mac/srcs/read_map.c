@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:56:56 by jimmy             #+#    #+#             */
-/*   Updated: 2023/11/02 19:11:15 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/02 20:27:17 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@ int	read_map(char *map, t_game *game)
 		free(line);
 	}
 	close(fd);
-	ft_printf("%s\n", game->map_line);
 	check_limits(game);
 	check_line(game);
 	game->matrix = ft_split(game->map_line, '\n');
