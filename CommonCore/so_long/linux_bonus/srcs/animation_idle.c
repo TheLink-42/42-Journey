@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 16:21:15 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/31 16:55:37 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/04 13:25:17 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ static void	animation_idle_terrain_aux(t_image *img, t_terrain *ter)
 		ter->land = img->land_0;
 }
 
-static void	animation_idle_terrain(t_image *img, t_terrain *ter)
+static void	animation_idle_terrain(t_game *game, t_image *img, t_terrain *ter)
 {
-	if (!ter->frame)
+	if (!game->frame)
 	{
 		ter->up_right = img->up_right_1;
 		ter->up = img->up_1;
@@ -40,28 +40,24 @@ static void	animation_idle_terrain(t_image *img, t_terrain *ter)
 		ter->right = img->right_1;
 		ter->block = img->block_1;
 		ter->land = img->land_1;
-		ter->frame = 1;
 	}
 	else
 	{
 		animation_idle_terrain_aux(img, ter);
-		ter->frame = 0;
 	}
 }
 
-static void	animation_idle_player(t_image *img, t_player *npc)
+static void	animation_idle_player(t_game *game, t_image *img, t_player *npc)
 {
-	if (!npc->frame)
+	if (!game->frame)
 	{
 		npc->left = img->idle_player_l_1;
 		npc->right = img->idle_player_r_1;
-		npc->frame = 1;
 	}
 	else
 	{
 		npc->left = img->idle_player_l_0;
 		npc->right = img->idle_player_r_0;
-		npc->frame = 0;
 	}
 }	
 
@@ -72,9 +68,13 @@ int	idle_animation(t_game *game)
 	i++;
 	if (i == 10000)
 	{
-		animation_idle_player(game->img, game->player);
-		animation_idle_terrain(game->img, game->terrain);
+		animation_idle_player(game, game->img, game->player);
+		animation_idle_terrain(game, game->img, game->terrain);
 		print_map(game);
+		if (!game->frame)
+			game->frame = 1;
+		else
+			game->frame = 0;
 		i = 0;
 	}
 	return (0);

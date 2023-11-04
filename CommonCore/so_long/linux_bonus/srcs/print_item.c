@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_exit.c                                       :+:      :+:    :+:   */
+/*   print_item.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 19:40:25 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/11/04 13:22:13 by jbaeza-c         ###   ########.fr       */
+/*   Created: 2023/11/04 13:29:53 by jbaeza-c          #+#    #+#             */
+/*   Updated: 2023/11/04 13:32:33 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/so_long.h"
 
-void	print_exit(t_game *game, int x, int y)
+void	print_item(t_game *game, int x, int y)
 {
 	t_image	*img;
 
 	img = game->img;
 	if (!game->frame)
-	{
-		if (!game->num_items)
-			mlx_put_image_to_window(game->mlx, game->win,
-				img->open_exit_0, x, y);
-		else
-			mlx_put_image_to_window(game->mlx, game->win,
-				img->closed_exit_0, x, y);
-	}
+		mlx_put_image_to_window(game->mlx, game->win,
+			img->item_0, x, y);
 	else
-	{
-		if (!game->num_items)
-			mlx_put_image_to_window(game->mlx, game->win,
-				img->open_exit_1, x, y);
-		else
-			mlx_put_image_to_window(game->mlx, game->win,
-				img->closed_exit_1, x, y);
-	}
+		mlx_put_image_to_window(game->mlx, game->win,
+			img->item_1, x, y);
 }

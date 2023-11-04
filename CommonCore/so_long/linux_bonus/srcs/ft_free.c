@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:37:30 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/31 16:58:29 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/04 13:19:34 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ static void	ft_free_img_aux(t_game *game, t_image *img)
 	mlx_destroy_image(game->mlx, img->mov_player_r_0);
 	mlx_destroy_image(game->mlx, img->mov_player_r_1);
 	mlx_destroy_image(game->mlx, img->mov_player_r_2);
-	mlx_destroy_image(game->mlx, img->mov_player_r_3);
-	mlx_destroy_image(game->mlx, img->open_exit);
-	mlx_destroy_image(game->mlx, img->closed_exit);
+	mlx_destroy_image(game->mlx, img->open_exit_0);
+	mlx_destroy_image(game->mlx, img->open_exit_1);
+	mlx_destroy_image(game->mlx, img->closed_exit_0);
+	mlx_destroy_image(game->mlx, img->closed_exit_1);
 }
 
 static void	ft_free_img(t_game *game, t_image *img)
@@ -51,8 +52,8 @@ static void	ft_free_img(t_game *game, t_image *img)
 	mlx_destroy_image(game->mlx, img->mov_player_l_0);
 	mlx_destroy_image(game->mlx, img->mov_player_l_1);
 	mlx_destroy_image(game->mlx, img->mov_player_l_2);
-	mlx_destroy_image(game->mlx, img->mov_player_l_3);
-	mlx_destroy_image(game->mlx, img->item);
+	mlx_destroy_image(game->mlx, img->item_0);
+	mlx_destroy_image(game->mlx, img->item_1);
 	ft_free_img_aux(game, img);
 }
 

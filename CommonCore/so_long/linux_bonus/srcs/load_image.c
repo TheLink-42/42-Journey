@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:31:55 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/31 16:53:10 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/04 13:20:39 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,18 @@
 
 static void	init_other_img(t_game *game, t_image *img)
 {
-	img->item = mlx_xpm_file_to_image(game->mlx,
-			"imgs/item.xpm", &img->width, &img->height);
-	img->open_exit = mlx_xpm_file_to_image(game->mlx,
-			"imgs/open_exit.xpm", &img->width, &img->height);
-	img->closed_exit = mlx_xpm_file_to_image(game->mlx,
-			"imgs/closed_exit.xpm", &img->width, &img->height);
+	img->item_0 = mlx_xpm_file_to_image(game->mlx,
+			"imgs/item_0.xpm", &img->width, &img->height);
+	img->item_1 = mlx_xpm_file_to_image(game->mlx,
+			"imgs/item_1.xpm", &img->width, &img->height);
+	img->open_exit_0 = mlx_xpm_file_to_image(game->mlx,
+			"imgs/open_exit_0.xpm", &img->width, &img->height);
+	img->open_exit_1 = mlx_xpm_file_to_image(game->mlx,
+			"imgs/open_exit_1.xpm", &img->width, &img->height);
+	img->closed_exit_0 = mlx_xpm_file_to_image(game->mlx,
+			"imgs/closed_exit_0.xpm", &img->width, &img->height);
+	img->closed_exit_1 = mlx_xpm_file_to_image(game->mlx,
+			"imgs/closed_exit_1.xpm", &img->width, &img->height);
 }
 
 static void	init_player_img(t_game *game, t_image *img)
@@ -38,16 +44,12 @@ static void	init_player_img(t_game *game, t_image *img)
 			"imgs/mov_player_l_1.xpm", &img->width, &img->height);
 	img->mov_player_l_2 = mlx_xpm_file_to_image(game->mlx,
 			"imgs/mov_player_l_2.xpm", &img->width, &img->height);
-	img->mov_player_l_3 = mlx_xpm_file_to_image(game->mlx,
-			"imgs/mov_player_l_3.xpm", &img->width, &img->height);
 	img->mov_player_r_0 = mlx_xpm_file_to_image(game->mlx,
 			"imgs/mov_player_r_0.xpm", &img->width, &img->height);
 	img->mov_player_r_1 = mlx_xpm_file_to_image(game->mlx,
 			"imgs/mov_player_r_1.xpm", &img->width, &img->height);
 	img->mov_player_r_2 = mlx_xpm_file_to_image(game->mlx,
 			"imgs/mov_player_r_2.xpm", &img->width, &img->height);
-	img->mov_player_r_3 = mlx_xpm_file_to_image(game->mlx,
-			"imgs/mov_player_r_3.xpm", &img->width, &img->height);
 }
 
 static void	init_terrain_img_aux(t_game *game, t_image *img)
