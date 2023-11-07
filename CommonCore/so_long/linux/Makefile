@@ -6,7 +6,7 @@
 #    By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 08:18:10 by jbaeza-c          #+#    #+#              #
-#    Updated: 2023/10/29 00:13:23 by jbaeza-c         ###   ########.fr        #
+#    Updated: 2023/11/07 15:16:33 by jbaeza-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ OBJS = $(SRCS:.c=.o)
 
 NAME = so_long
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=undefined
+CFLAGS = -Wall -Wextra -Werror
 LINKS = -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 RM = rm -rf
 
