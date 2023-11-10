@@ -38,8 +38,8 @@ int pos, t_strat *strat_method)
 {
 	int		nbr;
 	t_strat	strategy;
-
-	read_flags(tab, format, &pos);
+	while (format[pos] < '1' || format[pos] > '9')
+		read_flags(tab, format, &pos);
 	nbr = ft_atoi(&format[pos]);
 	tab->width = nbr;
 	if (nbr > 0)
