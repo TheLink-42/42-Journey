@@ -6,11 +6,11 @@
 #    By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 13:09:21 by jbaeza-c          #+#    #+#              #
-#    Updated: 2023/11/09 23:40:00 by jbaeza-c         ###   ########.fr        #
+#    Updated: 2023/11/13 13:53:50 by jbaeza-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = $(addprefix srcs/, pipex.c utils.c)
+SRCS = $(addprefix srcs/, philo.c)
 
 OBJS = $(SRCS:.c=.o)
 
@@ -19,9 +19,9 @@ LIBFT = $(LIBFT_PATH)/libft.a
 
 CC = cc
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -pthread
 
-NAME = pipex
+NAME = philo
 
 all: $(NAME)
 
