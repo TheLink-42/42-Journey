@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:56:56 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/22 21:47:12 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/11/14 14:47:57 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ static void	check_line(t_game *game)
 			ft_error(game, 0);
 		i++;
 	}
+	if (!game->num_items)
+		ft_error(game, 7)
 	if (game->num_player != 1 || game->num_exit != 1)
 		ft_error(game, 1);
 }
