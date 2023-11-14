@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:26:34 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/29 00:17:09 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:54:15 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ void	print_walls(t_game *game, int x, int y)
 		print_horizontal(game, game->img, x, y);
 	else
 		mlx_put_image_to_window(game->mlx, game->win,
-			game->img->block, x, y);
+			game->img->block, x * SIZE, y * SIZE);
 }

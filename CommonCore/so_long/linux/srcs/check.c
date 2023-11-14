@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 12:21:08 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/11/14 15:30:25 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:44:41 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	floodfill(char *map, int pos, t_game *game)
 {
 	if (map[pos] == '1' || map[pos] == 'F')
 		return;
-	map[pos] = 'F'
+	map[pos] = 'F';
 	floodfill(map, pos - game->width - 1, game);
 	floodfill(map, pos + game->width + 1, game);
 	floodfill(map, pos - 1, game);
@@ -35,7 +35,7 @@ int	check_route(t_game *game)
 	while (game->map_line[i])
 	{
 		if (game->map_line[i] == 'P' || game->map_line[i] == 'E'
-			game->map_line[i] == 'C')
+			|| game->map_line[i] == 'C')
 			ft_error(game, 9);
 		i++;
 	}

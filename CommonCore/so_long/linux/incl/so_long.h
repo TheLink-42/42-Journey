@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:45:11 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/29 00:13:42 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:43:51 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ typedef struct s_game
 //FUNCTIONS
 //
 
+int		check_route(t_game *game);
+int		check_extension(char *map);
 void	ft_error(t_game *game, int n);
 int		ft_free(t_game *game);
 

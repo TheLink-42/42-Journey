@@ -6,12 +6,12 @@
 #    By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 08:18:10 by jbaeza-c          #+#    #+#              #
-#    Updated: 2023/11/14 12:16:11 by jbaeza-c         ###   ########.fr        #
+#    Updated: 2023/11/14 18:42:49 by jbaeza-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = $(addprefix srcs/,													\
-			ft_error.c ft_free.c game_exit.c key.c							\
+			ft_error.c ft_free.c game_exit.c key.c check.c					\
 			load_image.c print_exit.c print_map.c							\
 			print_wall.c read_map.c so_long.c)
 
