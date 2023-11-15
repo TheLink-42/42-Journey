@@ -84,7 +84,7 @@ static void	check_line(t_game *game)
 		i++;
 	}
 	if (!game->num_items)
-		ft_error(game, 7)
+		ft_error(game, 7);
 	if (game->num_player != 1 || game->num_exit != 1)
 		ft_error(game, 1);
 }

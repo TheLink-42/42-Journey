@@ -16,7 +16,7 @@ static void	floodfill(char *map, int pos, t_game *game)
 {
 	if (map[pos] == '1' || map[pos] == 'F')
 		return;
-	map[pos] = 'F'
+	map[pos] = 'F';
 	floodfill(map, pos - game->width - 1, game);
 	floodfill(map, pos + game->width + 1, game);
 	floodfill(map, pos - 1, game);
@@ -35,7 +35,7 @@ int	check_route(t_game *game)
 	while (game->map_line[i])
 	{
 		if (game->map_line[i] == 'P' || game->map_line[i] == 'E'
-			game->map_line[i] == 'C')
+			|| game->map_line[i] == 'C')
 			ft_error(game, 9);
 		i++;
 	}

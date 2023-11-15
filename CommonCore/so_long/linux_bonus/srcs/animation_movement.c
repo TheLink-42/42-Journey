@@ -16,13 +16,13 @@ static void	mov_anim_right_0(t_game *game, t_player *player, t_image *img)
 {
 	print_map(game);
 	player->right = img->mov_player_r_0;
-	usleep(200000);
+	//usleep(200000);
 	print_map(game);
 	player->right = img->mov_player_r_1;
-	usleep(200000);
+	//usleep(200000);
 	print_map(game);
 	player->right = img->mov_player_r_2;
-	usleep(200000);
+	//usleep(200000);
 	print_map(game);
 }
 
@@ -30,16 +30,16 @@ static void	mov_anim_right_1(t_game *game, t_player *player, t_image *img)
 {
 	print_map(game);
 	player->right = img->mov_player_r_1;
-	usleep(200000);
+	//usleep(200000);
 	print_map(game);
 	player->right = img->mov_player_r_0;
-	usleep(200000);
+	//usleep(200000);
 	print_map(game);
 	if (!game->frame)
 		player->right = img->idle_player_r_0;
 	else
 		player->right = img->idle_player_r_1;
-	usleep(200000);
+	//usleep(200000);
 	print_map(game);
 }
 
@@ -61,16 +61,16 @@ static void	mov_anim_left_1(t_game *game, t_player *player, t_image *img)
 {
 	print_map(game);
 	player->left = img->mov_player_l_1;
-	usleep(200000);
+	//usleep(200000);
 	print_map(game);
 	player->left = img->mov_player_l_0;
-	usleep(200000);
+	//usleep(200000);
 	print_map(game);
 	if (!game->frame)
 		player->left = img->idle_player_l_0;
 	else
 		player->left = img->idle_player_l_1;
-	usleep(200000);
+	//usleep(200000);
 	print_map(game);
 }
 
