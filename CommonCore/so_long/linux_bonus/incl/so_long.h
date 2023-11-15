@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:45:11 by jimmy             #+#    #+#             */
-/*   Updated: 2023/11/14 18:41:14 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:00:02 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 
 typedef enum e_side
 {
-	RIGHT = 0,
-	LEFT = 1,
+	LEFT = 0,
+	RIGHT = 1,
 }	t_side;
 
 typedef enum e_key
@@ -32,7 +32,6 @@ typedef enum e_key
 	KEY_A = 97,
 	KEY_S = 115,
 	KEY_D = 100,
-	KEY_SPACE = 32,
 	KEY_UP = 65362,
 	KEY_DOWN = 65364,
 	KEY_LEFT = 65361,
@@ -98,8 +97,8 @@ typedef struct s_terrain
 
 typedef struct s_player
 {
-	void	*right;
 	void	*left;
+	void	*right;
 	int		facing;
 }	t_player;
 
@@ -108,8 +107,8 @@ typedef struct s_game
 	void		*mlx;
 	void		*win;
 	t_image		*img;
-	t_terrain	*terrain;
 	t_player	*player;
+	t_terrain	*ter;
 	int			width;
 	int			height;
 	int			num_player;
@@ -119,8 +118,8 @@ typedef struct s_game
 	int			lineflag;
 	char		*map_line;
 	char		**matrix;
-	int			frame;
 	int			moves;
+	int			frame;
 }	t_game;
 
 //FUNCTIONS
@@ -131,17 +130,17 @@ int		check_extension(char *map);
 void	ft_error(t_game *game, int n);
 int		ft_free(t_game *game);
 
+void	init_img(t_game *game, t_image *img);
 void	init_structs(t_game *game);
-void	init_img(t_game *game);
-void	print_item(t_game *game, int x, int y);
 void	print_map(t_game *game);
+void	print_item(t_game *game, t_image *img, int x, int y);
 void	print_exit(t_game *game, int x, int y);
 void	print_walls(t_game *game, int x, int y);
-void	print_player(t_game *game, int x, int y);
+void	print_player(t_game *game, t_player *player, int x, int y);
 int		read_map(char *map, t_game *game);
 int		ft_key_press(int key, t_game *game);
 int		idle_animation(t_game *game);
-int		movement_animation(t_game *game, int situation);
+int		mov_animation(t_game *game, int situation);
 int		game_exit(t_game *game);
 
 #endif

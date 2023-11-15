@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 22:04:42 by jimmy             #+#    #+#             */
-/*   Updated: 2023/11/14 15:28:31 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:47:11 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ void	ft_error(t_game *game, int n)
 		ft_printf("Error. Fallo en lectura con gnl.\n");
 	if (n == 6)
 		ft_printf("Error. Formato de mapa incorrecto.\n");
-	if (n == 7)
-		ft_printf("Error. No hay coleccionables,\n");
 	if (n == 9)
-		ft_printf("Error. No hay solución al mapa.\n");
+		ft_printf("Error. No existe ruta de salida.\n");
 	ft_free(game);
 }

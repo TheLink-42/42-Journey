@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:31:55 by jimmy             #+#    #+#             */
-/*   Updated: 2023/11/04 13:20:39 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/15 12:16:38 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,9 @@ static void	init_terrain_img(t_game *game, t_image *img)
 	init_terrain_img_aux(game, img);
 }
 
-void	init_img(t_game *game)
+void	init_img(t_game *game, t_image *img)
 {
-	init_terrain_img(game, game->img);
-	init_player_img(game, game->img);
-	init_other_img(game, game->img);
+	init_terrain_img(game, img);
+	init_player_img(game, img);
+	init_other_img(game, img);
 }
