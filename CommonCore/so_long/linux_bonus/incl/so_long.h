@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:45:11 by jimmy             #+#    #+#             */
-/*   Updated: 2023/11/15 19:00:02 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:33:40 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ typedef struct s_image
 	void	*mov_player_r_0;
 	void	*mov_player_r_1;
 	void	*mov_player_r_2;
+	void	*enemy_0;
+	void	*enemy_1;
 	void	*item_0;
 	void	*item_1;
 	void	*open_exit_0;
@@ -109,10 +111,10 @@ typedef struct s_game
 	t_image		*img;
 	t_player	*player;
 	t_terrain	*ter;
+	void		*enemy;
 	int			width;
 	int			height;
 	int			num_player;
-	int			num_walls;
 	int			num_exit;
 	int			num_items;
 	int			lineflag;
@@ -134,6 +136,7 @@ void	init_img(t_game *game, t_image *img);
 void	init_structs(t_game *game);
 void	print_map(t_game *game);
 void	print_item(t_game *game, t_image *img, int x, int y);
+void	print_enemy(t_game *game, int x, int y);
 void	print_exit(t_game *game, int x, int y);
 void	print_walls(t_game *game, int x, int y);
 void	print_player(t_game *game, t_player *player, int x, int y);

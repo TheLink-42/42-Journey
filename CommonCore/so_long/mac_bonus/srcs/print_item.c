@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_player.c                                     :+:      :+:    :+:   */
+/*   print_item.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 13:00:53 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/11/15 14:30:22 by jbaeza-c         ###   ########.fr       */
+/*   Created: 2023/11/15 12:56:40 by jbaeza-c          #+#    #+#             */
+/*   Updated: 2023/11/15 14:30:07 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/so_long.h"
 
-void	print_player(t_game *game, t_player *player, int x, int y)
+void	print_item(t_game *game, t_image *img, int x, int y)
 {
-	if (player->facing == LEFT)
-		mlx_put_image_to_window(game->mlx, game->win, player->left, x, y);
+	if (!game->frame)
+		mlx_put_image_to_window(game->mlx, game->win, img->item_0, x, y);
 	else
-		mlx_put_image_to_window(game->mlx, game->win, player->right, x, y);
-}
+		mlx_put_image_to_window(game->mlx, game->win, img->item_1, x, y);
+}	

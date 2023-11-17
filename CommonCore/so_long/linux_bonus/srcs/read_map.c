@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:56:56 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/22 21:47:12 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/11/16 11:56:45 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,10 @@ static void	check_line(t_game *game)
 			game->num_items++;
 		else if (game->map_line[i] == 'E')
 			game->num_exit++;
-		else if (game->map_line[i] == '1')
-			game->num_walls++;
 		else if (game->map_line[i] == 'P')
 			game->num_player++;
-		else if (game->map_line[i] != '0' && game->map_line[i] != '\n')
+		else if (game->map_line[i] != '0' && game->map_line[i] != '\n'
+			&& game->map_line[i] != '1' && game->map_line[i] != 'X')
 			ft_error(game, 0);
 		i++;
 	}

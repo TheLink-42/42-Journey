@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 12:11:58 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/11/15 14:29:49 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/16 18:58:21 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ void	init_structs(t_game *game)
 	init_img(game, game->img);
 	init_terrain(game->img, game->ter);
 	init_player(game->img, game->player);
+	game->enemy = game->img->enemy_0;
 	game->width = 0;
 	game->height = 0;
 	game->num_player = 0;
-	game->num_walls = 0;
 	game->num_exit = 0;
 	game->num_items = 0;
 	game->map_line = NULL;
