@@ -31,6 +31,12 @@ stack.
 Any stack of three numbers can be sorted in 2 or less movements. We considere there are 6 different scenarios, 1 solved and 5 unsolved. We identify in which of the 6 scenarios we are and we perform the necessary movements to sort the stack.
 For example, we have the stack |2 1 3|. We should perform movement `sa` which will result in the stack |1 2 3|.
 
+However, it gets more complicated as we work with higher amounts of numbers. Therefore I have implemented the following algorithm to sort any stack with more than 3 numbers.
+
+Objctive, move the numbers from the primary stack to the auxiliary stack sorting them backwards in the process and move them back to the primary stack, already sorted.
+Firstly, we check if the stack is already sorted, as we would not need perform any movement.
+If the stack is unsorted we will perform `pb` twice. Why? In order for this algorithm to work, we need at least two numberes in the auxiliary stack to find if the next number is the smallest, the highest or in between the two of them.
+
 ### Performance of the Algorithm
 
 My push_swap sorts
@@ -42,7 +48,7 @@ My push_swap sorts
 
 The algorithm should be efficient enough to reach 100%. However the maximum instructions for 
 500 numbers are barely inside the limit and it might surpass for a few instructions
-in some cases (Tho every try I´ve made has been under 5500 instructions)
+in some cases (Tho every try I´ve made has been under 5500 instructions).
 ## Tester
 
 In order to run the tester execute this command on your push_swap directory:
