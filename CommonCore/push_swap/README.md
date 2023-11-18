@@ -26,7 +26,10 @@ stack.
 
 ## Algorithm
 
-(Working on it :memo:)
+### STACK OF 3 OR LESS NUMBERS
+
+Any stack of three numbers can be sorted in 2 or less movements. We considere there are 6 different scenarios, 1 solved and 5 unsolved. We identify in which of the 6 scenarios we are and we perform the necessary movements to sort the stack.
+For example, we have the stack |2 1 3|. We should perform movement `sa` which will result in the stack |1 2 3|.
 
 ### Performance of the Algorithm
 
