@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   psw.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
+/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:06:31 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/04 14:58:16 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/11/14 01:11:22 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,11 @@ int		move_cost_a(t_stack **stack, int index);
 int		move_cost_b(t_stack **stack, int index);
 
 //Check
+int		check_malloc(t_stack **stack_a, t_stack **stack_b);
 int		check_args(char **argv, int pos);
 int		check_int(char *str);
 int		is_unsorted(t_stack **stack);
+int		free_tab(char **tab);
 
 //Init
 int		init_stack(t_stack **stack_a, t_stack **stack_b, char **argv, int pos);

@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:37:30 by jimmy             #+#    #+#             */
-/*   Updated: 2023/11/02 19:44:17 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/16 13:31:16 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,15 @@ static void	ft_free_img_aux(t_game *game, t_image *img)
 	mlx_destroy_image(game->mlx, img->right_1);
 	mlx_destroy_image(game->mlx, img->block_1);
 	mlx_destroy_image(game->mlx, img->land_1);
-	mlx_destroy_image(game->mlx, img->fplayer_idle_1);
-	mlx_destroy_image(game->mlx, img->bplayer_idle_1);
-	mlx_destroy_image(game->mlx, img->lplayer_idle_1);
-	mlx_destroy_image(game->mlx, img->rplayer_idle_1);
-	mlx_destroy_image(game->mlx, img->open_exit);
-	mlx_destroy_image(game->mlx, img->closed_exit);
+	mlx_destroy_image(game->mlx, img->item_1);
+	mlx_destroy_image(game->mlx, img->open_exit_1);
+	mlx_destroy_image(game->mlx, img->closed_exit_1);
+	mlx_destroy_image(game->mlx, img->enemy_1);
+	mlx_destroy_image(game->mlx, img->idle_player_r_0);
+	mlx_destroy_image(game->mlx, img->idle_player_r_1);
+	mlx_destroy_image(game->mlx, img->mov_player_r_0);
+	mlx_destroy_image(game->mlx, img->mov_player_r_1);
+	mlx_destroy_image(game->mlx, img->mov_player_r_2);
 }
 
 static void	ft_free_img(t_game *game, t_image *img)
@@ -44,15 +47,15 @@ static void	ft_free_img(t_game *game, t_image *img)
 	mlx_destroy_image(game->mlx, img->right_0);
 	mlx_destroy_image(game->mlx, img->block_0);
 	mlx_destroy_image(game->mlx, img->land_0);
-	mlx_destroy_image(game->mlx, img->fplayer_idle_0);
-	mlx_destroy_image(game->mlx, img->bplayer_idle_0);
-	mlx_destroy_image(game->mlx, img->lplayer_idle_0);
-	mlx_destroy_image(game->mlx, img->rplayer_idle_0);
-	mlx_destroy_image(game->mlx, img->fplayer_action);
-	mlx_destroy_image(game->mlx, img->bplayer_action);
-	mlx_destroy_image(game->mlx, img->lplayer_action);
-	mlx_destroy_image(game->mlx, img->rplayer_action);
-	mlx_destroy_image(game->mlx, img->item);
+	mlx_destroy_image(game->mlx, img->item_0);
+	mlx_destroy_image(game->mlx, img->open_exit_0);
+	mlx_destroy_image(game->mlx, img->closed_exit_0);
+	mlx_destroy_image(game->mlx, img->enemy_0);
+	mlx_destroy_image(game->mlx, img->idle_player_l_0);
+	mlx_destroy_image(game->mlx, img->idle_player_l_1);
+	mlx_destroy_image(game->mlx, img->mov_player_l_0);
+	mlx_destroy_image(game->mlx, img->mov_player_l_1);
+	mlx_destroy_image(game->mlx, img->mov_player_l_2);
 	ft_free_img_aux(game, img);
 }
 
@@ -78,10 +81,14 @@ int	ft_free(t_game *game)
 		ft_free_matrix(game->matrix);
 	ft_free_img(game, game->img);
 	free(game->img);
-	free(game->terrain);
+	free(game->ter);
 	free(game->player);
-	mlx_clear_window(game->mlx, game->win);
-	mlx_destroy_window(game->mlx, game->win);
+	if (game->win)
+	{
+		mlx_clear_window(game->mlx, game->win);
+		mlx_destroy_window(game->mlx, game->win);
+	}
+	free(game->mlx);
 	if (game)
 		free(game);
 	exit(0);

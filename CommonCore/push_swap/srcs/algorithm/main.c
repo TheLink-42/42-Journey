@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
+/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 19:04:42 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/05 02:09:34 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/11/14 01:18:37 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,9 @@ void	print_nodes_index(t_stack **stack)
 	}
 }
 */
-int	free_tab(char **tab)
-{
-	int	i;
 
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
-	free(tab);
-	return (-1);
-}
-
-int	pre_exec(int argc, char **argv, t_stack **stack_a, t_stack **stack_b)
+static int	pre_exec(int argc, char **argv, t_stack **stack_a,
+	t_stack **stack_b)
 {
 	char	**tab;
 
@@ -60,21 +48,6 @@ int	pre_exec(int argc, char **argv, t_stack **stack_a, t_stack **stack_b)
 		if (init_stack(stack_a, stack_b, argv, 1))
 			return (-1);
 	}
-	return (0);
-}
-
-int	check_malloc(t_stack **stack_a, t_stack **stack_b)
-{
-	if (!stack_a && !stack_b)
-	{
-		ft_putstr_fd("Error\n", 2);
-		return (0);
-	}
-	if (!stack_a)
-		free_stack(stack_b);
-	if (!stack_b)
-		free_stack(stack_a);
-	ft_putstr_fd("Error\n", 2);
 	return (0);
 }
 

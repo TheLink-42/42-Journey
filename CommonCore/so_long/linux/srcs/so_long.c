@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:50:21 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/29 00:13:58 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:45:32 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static void	init_game_data(t_game *game, char *map)
 	init_img(game);
 	game->win = mlx_new_window(game->mlx, game->width * SIZE,
 			game->height * SIZE, "so_long");
+	check_route(game);
 	print_map(game);
 }
 
@@ -43,6 +44,7 @@ int	main(int argc, char **argv)
 		ft_printf("Error. No se ha introducido ningún mapa");
 		return (0);
 	}
-	so_long(argc, argv);
+	if (!check_extension(argv[1]))
+		so_long(argc, argv);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 14:07:43 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/31 16:45:35 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:40:00 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,19 @@ static void	move_w(t_game *game)
 		i++;
 	if (game->matrix[(i - w) / w][i% w] == '1')
 		return ;
+	if (game->matrix[(i - w) / w][i% w] == 'X')
+		ft_error(game, 9);
 	if (game->matrix[(i - w) / w][i % w] == 'C')
 		game->num_items--;
 	if (game->matrix[(i - w) / w][i % w] == 'E')
 		if (game_exit(game))
 			return ;
+	mov_animation(game, 0);
 	game->matrix[i / w][i % w] = '0';
 	game->matrix[(i - w) / w][i % w] = 'P';
 	game->moves++;
 	ft_printf("Moves: %d\n", game->moves);
-	print_map(game);
+	mov_animation(game, 1);
 }
 
 static void	move_a(t_game *game)
@@ -43,21 +46,23 @@ static void	move_a(t_game *game)
 	i = 0;
 	w = game->width;
 	game->player->facing = LEFT;
-	print_map(game);
 	while (game->matrix[i / w][i % w] != 'P')
 		i++;
 	if (game->matrix[i / w][(i - 1) % w] == '1')
 		return ;
+	if (game->matrix[i / w][(i - 1) % w] == 'X')
+		ft_error(game, 9);
 	if (game->matrix[i / w][(i - 1) % w] == 'C')
 		game->num_items--;
 	if (game->matrix[i / w][(i - 1) % w] == 'E')
 		if (game_exit(game))
 			return ;
+	mov_animation(game, 0);
 	game->matrix[i / w][i % w] = '0';
 	game->matrix[i / w][(i - 1) % w] = 'P';
 	game->moves++;
 	ft_printf("Moves: %d\n", game->moves);
-	print_map(game);
+	mov_animation(game, 1);
 }
 
 static void	move_s(t_game *game)
@@ -71,16 +76,19 @@ static void	move_s(t_game *game)
 		i++;
 	if (game->matrix[(i + w) / w][i% w] == '1')
 		return ;
+	if (game->matrix[(i + w) / w][i% w] == 'X')
+		ft_error(game, 9);
 	if (game->matrix[(i + w) / w][i % w] == 'C')
 		game->num_items--;
 	if (game->matrix[(i + w) / w][i % w] == 'E')
 		if (game_exit(game))
 			return ;
+	mov_animation(game, 0);
 	game->matrix[i / w][i % w] = '0';
 	game->matrix[(i + w) / w][i % w] = 'P';
 	game->moves++;
 	ft_printf("Moves: %d\n", game->moves);
-	print_map(game);
+	mov_animation(game, 1);
 }
 
 static void	move_d(t_game *game)
@@ -91,21 +99,23 @@ static void	move_d(t_game *game)
 	i = 0;
 	w = game->width;
 	game->player->facing = RIGHT;
-	print_map(game);
 	while (game->matrix[i / w][i % w] != 'P')
 		i++;
 	if (game->matrix[i / w][(i + 1) % w] == '1')
 		return ;
+	if (game->matrix[i / w][(i + 1) % w] == 'X')
+		ft_error(game, 9);
 	if (game->matrix[i / w][(i + 1) % w] == 'C')
 		game->num_items--;
 	if (game->matrix[i / w][(i + 1) % w] == 'E')
 		if (game_exit(game))
 			return ;
+	mov_animation(game, 0);
 	game->matrix[i / w][i % w] = '0';
 	game->matrix[i / w][(i + 1) % w] = 'P';
 	game->moves++;
 	ft_printf("Moves: %d\n", game->moves);
-	print_map(game);
+	mov_animation(game, 1);
 }
 
 int	ft_key_press(int key, t_game *game)

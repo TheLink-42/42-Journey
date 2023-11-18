@@ -20,7 +20,6 @@ static void	get_pos(int r, int i, t_game *game)
 
 	x = (i % game->width);
 	y = (i / game->width);
-//	ft_printf("Imprimimos la pos: %d,%d\n", x, y);
 	img = game->img;
 	if (r == 'C')
 		mlx_put_image_to_window(game->mlx, game->win,

@@ -52,3 +52,5 @@ It will return this information for both 100 and 500 numbers. If you want to cha
 amount of executions just change number 100 for any number you want.
 
 ![Tester example](https://cdn.discordapp.com/attachments/800692244179845150/1159293284322123856/image.png?ex=65307f01&is=651e0a01&hm=8c33b0dbd192a9805f9d8ee72ea81f9f92b6724f46d4df33797c742b94cbdf6f& "Tester example")
+
+If you encounter any problem using the tester, feel free to reach me on slack `jbaeza-c` to ask me any question. 

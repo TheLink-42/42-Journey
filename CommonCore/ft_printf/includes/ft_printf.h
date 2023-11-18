@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
+/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 18:35:06 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/15 09:57:16 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/11/06 14:06:34 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ typedef struct s_print
 	va_list	args;
 	int		width;
 	int		len;
+	int		dash;
+	int		zero;
+	int		prec;
+	int		hash;
+	int		space;
+	int		cross;
 	int		count;
 }	t_print;
 
@@ -29,6 +35,8 @@ typedef struct s_strat
 	void	(*execute)(t_print *tab, int fd);
 }	t_strat;
 
+t_print	*init_tab(t_print *tab);
+void	strat_create(t_strat *strat_method);
 int		ft_printf(const char *format, ...);
 
 void	print_char(t_print *tab, int fd);

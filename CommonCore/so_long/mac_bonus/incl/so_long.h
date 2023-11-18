@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 11:45:11 by jimmy             #+#    #+#             */
-/*   Updated: 2023/11/02 19:40:53 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:33:40 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 # ifndef SIZE
 #  define SIZE 64
 # endif
+
+typedef enum e_side
+{
+	LEFT = 0,
+	RIGHT = 1,
+}	t_side;
 
 typedef enum e_key
 {
@@ -55,23 +61,26 @@ typedef struct s_image
 	void	*block_1;
 	void	*land_0;
 	void	*land_1;
-	void	*fplayer_idle_0;
-	void	*fplayer_idle_1;
-	void	*fplayer_action;
-	void	*bplayer_idle_0;
-	void	*bplayer_idle_1;
-	void	*bplayer_action;
-	void	*lplayer_idle_0;
-	void	*lplayer_idle_1;
-	void	*lplayer_action;
-	void	*rplayer_idle_0;
-	void	*rplayer_idle_1;
-	void	*rplayer_action;
-	void	*item;
-	void	*open_exit;
-	void	*closed_exit;
-	int	width;
-	int	height;
+	void	*idle_player_l_0;
+	void	*idle_player_l_1;
+	void	*idle_player_r_0;
+	void	*idle_player_r_1;
+	void	*mov_player_l_0;
+	void	*mov_player_l_1;
+	void	*mov_player_l_2;
+	void	*mov_player_r_0;
+	void	*mov_player_r_1;
+	void	*mov_player_r_2;
+	void	*enemy_0;
+	void	*enemy_1;
+	void	*item_0;
+	void	*item_1;
+	void	*open_exit_0;
+	void	*open_exit_1;
+	void	*closed_exit_0;
+	void	*closed_exit_1;
+	int		width;
+	int		height;
 }	t_image;
 
 typedef struct s_terrain
@@ -86,17 +95,13 @@ typedef struct s_terrain
 	void	*right;
 	void	*block;
 	void	*land;
-	int	frame;
 }	t_terrain;
 
 typedef struct s_player
 {
-	void	*front;
-	void	*back;
-	void	*right;
 	void	*left;
-	int	facing;
-	int	frame;
+	void	*right;
+	int		facing;
 }	t_player;
 
 typedef struct s_game
@@ -104,35 +109,41 @@ typedef struct s_game
 	void		*mlx;
 	void		*win;
 	t_image		*img;
-	t_terrain	*terrain;
 	t_player	*player;
-	int		width;
-	int		height;
-	int		num_player;
-	int		num_walls;
-	int		num_exit;
-	int		num_items;
-	int		lineflag;
+	t_terrain	*ter;
+	void		*enemy;
+	int			width;
+	int			height;
+	int			num_player;
+	int			num_exit;
+	int			num_items;
+	int			lineflag;
 	char		*map_line;
 	char		**matrix;
-	int		moves;
+	int			moves;
+	int			frame;
 }	t_game;
 
 //FUNCTIONS
 //
 
+int		check_route(t_game *game);
+int		check_extension(char *map);
 void	ft_error(t_game *game, int n);
 int		ft_free(t_game *game);
 
+void	init_img(t_game *game, t_image *img);
 void	init_structs(t_game *game);
-void	init_img(t_game *game);
 void	print_map(t_game *game);
+void	print_item(t_game *game, t_image *img, int x, int y);
+void	print_enemy(t_game *game, int x, int y);
 void	print_exit(t_game *game, int x, int y);
 void	print_walls(t_game *game, int x, int y);
-void	print_player(t_game *game, int x, int y);
+void	print_player(t_game *game, t_player *player, int x, int y);
 int		read_map(char *map, t_game *game);
 int		ft_key_press(int key, t_game *game);
-int		ft_animation(t_game *game);
+int		idle_animation(t_game *game);
+int		mov_animation(t_game *game, int situation);
 int		game_exit(t_game *game);
 
 #endif

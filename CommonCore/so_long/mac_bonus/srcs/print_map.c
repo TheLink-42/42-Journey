@@ -6,27 +6,33 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:04:43 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/23 14:30:25 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/16 11:42:29 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/so_long.h"
 
+static void	print_moves(t_game *game)
+{
+	char	*moves;
+
+	moves = ft_itoa(game->moves);
+	mlx_string_put(game->mlx, game->win, 20, 20, 0x00FF0000, "MOVES:");
+	mlx_string_put(game->mlx, game->win, 60, 20, 0x00FF0000, moves);
+	free(moves);
+}
+
 static void	get_pos(int r, int i, t_game *game)
 {
 	int			x;
 	int			y;
-	t_image		*img;
 	t_terrain	*ter;
 
 	x = (i % game->width);
 	y = (i / game->width);
-//	ft_printf("Imprimimos la pos: %d,%d\n", x, y);
-	img = game->img;
-	ter = game->terrain;
+	ter = game->ter;
 	if (r == 'C')
-		mlx_put_image_to_window(game->mlx, game->win,
-			img->item, SIZE * x, SIZE * y);
+		print_item(game, game->img, SIZE * x, SIZE * y);
 	if (r == 'E')
 		print_exit(game, SIZE * x, SIZE * y);
 	if (r == '1')
@@ -35,17 +41,20 @@ static void	get_pos(int r, int i, t_game *game)
 		mlx_put_image_to_window(game->mlx, game->win, ter->land,
 			SIZE * x, SIZE * y);
 	if (r == 'P')
-		print_player(game, SIZE * x, SIZE * y);
+		print_player(game, game->player, SIZE * x, SIZE * y);
+	if (r == 'X')
+		mlx_put_image_to_window(game->mlx, game->win, game->enemy,
+			SIZE * x, SIZE * y);
 }
 
 void	print_map(t_game *game)
 {
-	int	i;
-	int	w;
+	int		i;
+	int		w;
 
 	w = game->width;
-	i = 0;
-	while (game->matrix[i / w])
+	i = -1;
+	while (game->matrix[++i / w])
 	{
 		if (game->matrix[i / w][i % w] == 'C')
 			get_pos('C', i, game);
@@ -58,7 +67,7 @@ void	print_map(t_game *game)
 		else if (game->matrix[i / w][i % w] == '0')
 			get_pos('0', i, game);
 		else
-			exit(0);
-		i++;
+			get_pos('X', i, game);
+		print_moves(game);
 	}
 }

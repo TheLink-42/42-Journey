@@ -6,11 +6,11 @@
 #    By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 13:09:21 by jbaeza-c          #+#    #+#              #
-#    Updated: 2023/09/29 01:25:42 by jimmy            ###   ########.fr        #
+#    Updated: 2023/11/09 23:40:00 by jbaeza-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =
+SRCS = $(addprefix srcs/, pipex.c utils.c)
 
 OBJS = $(SRCS:.c=.o)
 
@@ -19,7 +19,7 @@ LIBFT = $(LIBFT_PATH)/libft.a
 
 CC = cc
 RM = rm -f
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 
 NAME = pipex
 

@@ -3,35 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmy <jbaeza-c@student.42madrid.com>      +#+  +:+       +#+        */
+/*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 18:38:16 by jimmy             #+#    #+#             */
-/*   Updated: 2023/09/15 16:19:00 by jimmy            ###   ########.fr       */
+/*   Updated: 2023/11/06 14:59:57 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../includes/ft_printf.h"
 
-static t_print	*init_tab(t_print *tab)
+static void	read_flags(t_print *tab, const char *format, int *pos)
 {
-	tab->width = 0;
-	tab->len = 0;
-	tab->count = 0;
-	return (tab);
-}
+	int	i;
 
-static void	strat_create(t_strat *strat_method)
-{
-	strat_method['d'] = (t_strat){.execute = print_integer};
-	strat_method['i'] = (t_strat){.execute = print_integer};
-	strat_method['u'] = (t_strat){.execute = print_decimal};
-	strat_method['o'] = (t_strat){.execute = print_octal};
-	strat_method['x'] = (t_strat){.execute = print_hexalow};
-	strat_method['X'] = (t_strat){.execute = print_hexaup};
-	strat_method['c'] = (t_strat){.execute = print_char};
-	strat_method['s'] = (t_strat){.execute = print_string};
-	strat_method['p'] = (t_strat){.execute = print_ptr};
-	strat_method['%'] = (t_strat){.execute = print_perc};
+	i = *pos;
+	if (format[i] == '-')
+		tab->dash = 1;
+	if (format[i] == '0')
+		tab->zero = 1;
+	if (format[i] == '.')
+		tab->prec = 1;
+	if (format[i] == '#')
+		tab->hash = 1;
+	if (format[i] == ' ')
+		tab->space = 1;
+	if (format[i] == '+')
+		tab->cross = 1;
+	i++;
+	*pos = i;
 }
 
 static int	check_format(t_print *tab, const char *format,
@@ -40,7 +39,8 @@ int pos, t_strat *strat_method)
 	int		nbr;
 	t_strat	strategy;
 
-	tab->len = 0;
+	while (format[pos] < '1' || format[pos] > '9')
+		read_flags(tab, format, &pos);
 	nbr = ft_atoi(&format[pos]);
 	tab->width = nbr;
 	if (nbr > 0)
@@ -91,6 +91,7 @@ int	ft_printf(const char *format, ...)
 		free(strat_method);
 		return (-1);
 	}
+	tab->count = 0;
 	strat_create(strat_method);
 	init_tab(tab);
 	va_start(tab->args, format);

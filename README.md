@@ -20,6 +20,7 @@ Feel free to use and implement my code as much as you need to.
 4. [PUSH_SWAP](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/push_swap) 🔋
 5. [PIPEX](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/pipex) 🔧
 6. [SO_LONG](https://github.com/TheLink-42/42-Journey/tree/main/CommonCore/so_long)
+7. [PHILOSOPHERS](https://github.com/TheLink-42/42-Journey/tree/main/CommonCore/philosophers)
 
 ## Piscine 🏊
 1. [SHELL](https://github.com/Afromaaaan/42-Journey/tree/main/Piscine/SHELL)

@@ -6,19 +6,21 @@
 #    By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/26 08:18:10 by jbaeza-c          #+#    #+#              #
-#    Updated: 2023/10/31 16:54:21 by jbaeza-c         ###   ########.fr        #
+#    Updated: 2023/11/16 12:52:55 by jbaeza-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = $(addprefix srcs/, animation_idle.c game_exit.c key.c print_player.c	\
-		so_long.c ft_error.c load_image.c print_exit.c print_wall.c			\
-		ft_free.c init_structs.c print_map.c read_map.c)
+SRCS = $(addprefix srcs/,													\
+			animation_idle.c animation_mov.c check.c ft_error.c ft_free.c 	\
+			game_exit.c init_structs.c key.c load_image.c print_exit.c		\
+			print_item.c print_map.c print_player.c print_wall.c			\
+			read_map.c so_long.c)
 
 OBJS = $(SRCS:.c=.o)
 
 NAME = so_long
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=undefined
+CFLAGS = -Wall -Wextra -Werror -fsanitize=leak
 LINKS = -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 RM = rm -rf
 

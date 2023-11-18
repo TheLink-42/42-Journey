@@ -21,7 +21,7 @@ static void	move_w(t_game *game)
 	w = game->width;
 	while (game->matrix[i / w][i % w] != 'P')
 		i++;
-	if (game->matrix[(i - w) / w][i% w] == '1')
+	if (game->matrix[(i - w) / w][i % w] == '1')
 		return ;
 	if (game->matrix[(i - w) / w][i % w] == 'C')
 		game->num_items--;
@@ -67,7 +67,7 @@ static void	move_s(t_game *game)
 	w = game->width;
 	while (game->matrix[i / w][i % w] != 'P')
 		i++;
-	if (game->matrix[(i + w) / w][i% w] == '1')
+	if (game->matrix[(i + w) / w][i % w] == '1')
 		return ;
 	if (game->matrix[(i + w) / w][i % w] == 'C')
 		game->num_items--;

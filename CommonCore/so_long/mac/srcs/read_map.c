@@ -44,6 +44,7 @@ static void	check_horizontal_limits(t_game *game)
 			ft_error(game, 3);
 		i++;
 	}
+	check_line(game);
 }
 
 static void	check_limits(t_game *game)
@@ -112,7 +113,6 @@ int	read_map(char *map, t_game *game)
 	}
 	close(fd);
 	check_limits(game);
-	check_line(game);
 	game->matrix = ft_split(game->map_line, '\n');
 	return (0);
 }
