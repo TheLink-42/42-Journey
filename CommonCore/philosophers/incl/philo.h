@@ -6,12 +6,12 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 01:24:44 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/11/13 13:53:13 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/17 21:22:53 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILOSOPHERS_H
-# define PHILOSOPHERS_H
+#ifndef PHILO_H
+# define PHILO_H
 
 # include <unistd.h>
 # include <stdlib.h>

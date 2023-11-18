@@ -6,11 +6,11 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 01:29:15 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/11/13 13:52:56 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/17 15:04:50 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/philosophers.h"
+#include "../incl/philo.h"
 
 int	main(int argc, char **argv)
 {
