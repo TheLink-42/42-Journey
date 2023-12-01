@@ -6,7 +6,7 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 14:36:16 by jbaeza-c          #+#    #+#             */
-/*   Updated: 2023/12/01 19:33:28 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/12/01 19:51:29 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,11 +107,11 @@ int main(void)
 			return (0);
 		else if (action == "ADD")
 		{
-			if (pos < 2)
+			if (pos < 8)
 				pos++;
 			else
 				pos = 1;
-			if (size < 2)
+			if (size < 8)
 				size++;
 			ft_add(&phonebook, pos - 1);
 		}
