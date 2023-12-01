@@ -21,6 +21,8 @@ Feel free to use and implement my code as much as you need to.
 5. [PIPEX](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/pipex) 🔧
 6. [SO_LONG](https://github.com/TheLink-42/42-Journey/tree/main/CommonCore/so_long)
 7. [PHILOSOPHERS](https://github.com/TheLink-42/42-Journey/tree/main/CommonCore/philosophers)
+8. [MINISHELL] En proceso.
+9. [CPP00](https://github.com/TheLink-42/42-Journey/tree/main/CommonCore/CPP/cpp00)
 
 ## Piscine 🏊
 1. [SHELL](https://github.com/Afromaaaan/42-Journey/tree/main/Piscine/SHELL)
