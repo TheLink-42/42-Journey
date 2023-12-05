@@ -6,11 +6,11 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 18:56:56 by jimmy             #+#    #+#             */
-/*   Updated: 2023/11/02 20:27:17 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/16 11:56:45 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/so_long.h"
+#include "../incl_bonus/so_long.h"
 
 static void	adjust_lineflag(char *line, t_game *game)
 {
@@ -37,18 +37,15 @@ static void	check_line(t_game *game)
 			game->num_items++;
 		else if (game->map_line[i] == 'E')
 			game->num_exit++;
-		else if (game->map_line[i] == '1')
-			game->num_walls++;
 		else if (game->map_line[i] == 'P')
 			game->num_player++;
-		else if (game->map_line[i] != '0' && game->map_line[i] != '\n')
+		else if (game->map_line[i] != '0' && game->map_line[i] != '\n'
+			&& game->map_line[i] != '1' && game->map_line[i] != 'X')
 			ft_error(game, 0);
 		i++;
 	}
 	if (game->num_player != 1 || game->num_exit != 1)
 		ft_error(game, 1);
-	if (!game->num_items)
-		ft_error(game, 8);
 }
 
 static void	check_horizontal_limits(t_game *game)
@@ -89,7 +86,7 @@ static void	check_limits(t_game *game)
 	}
 	check_horizontal_limits(game);
 	if (game->width > 20 || game->height > 20)
-		ft_error(game, 7);
+		ft_error(game, 10);
 }
 
 int	read_map(char *map, t_game *game)

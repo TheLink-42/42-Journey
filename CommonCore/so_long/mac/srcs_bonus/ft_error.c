@@ -6,11 +6,11 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 22:04:42 by jimmy             #+#    #+#             */
-/*   Updated: 2023/10/20 19:54:49 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:37:57 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/so_long.h"
+#include "../incl_bonus/so_long.h"
 
 void	ft_error(t_game *game, int n)
 {
@@ -30,12 +30,12 @@ void	ft_error(t_game *game, int n)
 	if (n == 5)
 		ft_printf("Error. Fallo en lectura con gnl.\n");
 	if (n == 6)
-		ft_printf("Error. Extensión incorrecta.\n");
+		ft_printf("Error. Formato de mapa incorrecto.\n");
 	if (n == 7)
-		ft_printf("Error. Dimensiones máximas 20 x 20.\n");
+		ft_printf("Error. No hay ningún coleccionable en el mapa.\n");
 	if (n == 8)
-		ft_printf("Error. No hay ningún coleccionable\n");
-	if (n == 9)
-		ft_printf("Error. No hay solución.\n");
+		ft_printf("Error. No existe ruta de salida.\n");
+	if (n == 10)
+		ft_printf("Error. Dimensiones máximas 20 x 20.\n");
 	ft_free(game);
 }

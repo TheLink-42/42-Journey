@@ -6,26 +6,15 @@
 /*   By: jbaeza-c <jbaeza-c@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:50:21 by jimmy             #+#    #+#             */
-/*   Updated: 2023/11/02 19:12:32 by jbaeza-c         ###   ########.fr       */
+/*   Updated: 2023/11/15 14:21:14 by jbaeza-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/so_long.h"
+#include "../incl_bonus/so_long.h"
 
 static void	init_game_data(t_game *game, char *map)
 {
-	game->win = NULL;
-	game->width = 0;
-	game->height = 0;
-	game->num_player = 0;
-	game->num_walls = 0;
-	game->num_exit = 0;
-	game->num_items = 0;
-	game->moves = 0;
-	game->n = 0;
-	game->map_line = NULL;
-	game->matrix = NULL;
-	init_img(game);
+	init_structs(game);
 	read_map(map, game);
 	check_route(game);
 	game->win = mlx_new_window(game->mlx, game->width * SIZE,
@@ -41,8 +30,8 @@ void	so_long(int argc, char **argv)
 	game = (t_game *)malloc(sizeof(t_game));
 	if (!game)
 		return ;
-	game->mlx = mlx_init();
 	init_game_data(game, argv[1]);
+	mlx_loop_hook(game->mlx, idle_animation, game);
 	mlx_key_hook(game->win, ft_key_press, game);
 	mlx_hook(game->win, 17, 0, ft_free, game);
 	mlx_loop(game->mlx);

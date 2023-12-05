@@ -48,14 +48,18 @@ int	ft_free(t_game *game)
 {
 	if (game->map_line)
 		free(game->map_line);
-	if (game->matrix)
+	if (!game->n)
 		ft_free_matrix(game->matrix);
 	ft_free_img(game, game->img);
 	free(game->img);
-	mlx_clear_window(game->mlx, game->win);
-	mlx_destroy_window(game->mlx, game->win);
+	if (game->win)
+	{
+		mlx_clear_window(game->mlx, game->win);
+		mlx_destroy_window(game->mlx, game->win);
+	}
 	if (game)
 		free(game);
+	system("leaks so_long");
 	exit(0);
 	return (0);
 }
