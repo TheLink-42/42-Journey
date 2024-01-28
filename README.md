@@ -2,21 +2,17 @@
 
 Just a simple repo to keep track of all my work done at 42!
 
-Feel free to use and implement my code as much as you need to.
+Feel free to use and implement my code as much as you need to giving credit to this repository.
 
 #### ⚠️ I strongly suggest not to copy my code but to use it as a reference. ⚠️
 ### ❗ Do not copy something that you don´t understand. ❗
 
-## Contents 
-1. COMMON CORE
-2. PISCINE
+<details>
+<summary>Common Core 👾</summary>
 
-
-
-## Common Core 👾
-1. [LIBFT](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/libft) 📚
-2. [FT_PRINTF](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/ft_printf) ✏️
-3. [GET_NEXT_LINE](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/get_next_line) 📜
+1. [LIBFT](https://github.com/TheLink-42/Libft) 📚
+2. [FT_PRINTF](https://github.com/TheLink-42/Ft_printf) ✏️
+3. [GET_NEXT_LINE](https://github.com/TheLink-42/GNL) 📜
 4. [PUSH_SWAP](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/push_swap) 🔋
 5. [PIPEX](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/pipex) 🔧
 6. [SO_LONG](https://github.com/TheLink-42/42-Journey/tree/main/CommonCore/so_long)
@@ -24,9 +20,11 @@ Feel free to use and implement my code as much as you need to.
 8. [MINISHELL] En proceso.
 9. [CPP00](https://github.com/TheLink-42/42-Journey/tree/main/CommonCore/CPP/cpp00)
 10. [CPP01](https://github.com/TheLink-42/42-Journey/tree/main/CommonCore/CPP/cpp01)
+</details>
 
+<details>
+<summary>Piscine 🏊</summary>
 
-## Piscine 🏊
 1. [SHELL](https://github.com/Afromaaaan/42-Journey/tree/main/Piscine/SHELL)
 	* [shell-00](https://github.com/Afromaaaan/42-Journey/tree/main/Piscine/SHELL/SHELL-00)
 	* [shell-01](https://github.com/Afromaaaan/42-Journey/tree/main/Piscine/SHELL/SHELL-01)
@@ -50,6 +48,7 @@ Feel free to use and implement my code as much as you need to.
 	* [rush-01](https://github.com/Afromaaaan/42-Journey/tree/main/Piscine/RUSH/RUSH-01)
 	* [rush-02](https://github.com/Afromaaaan/42-Journey/tree/main/Piscine/RUSH/RUSH-02)
 4. [BSQ](https://github.com/Afromaaaan/42-Journey/tree/main/Piscine/BSQ)
+</details>
 
 ## FAQ
 
