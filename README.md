@@ -13,7 +13,7 @@ Feel free to use and implement my code as much as you need to giving credit to t
 1. [LIBFT](https://github.com/TheLink-42/Libft) 📚
 2. [FT_PRINTF](https://github.com/TheLink-42/Ft_printf) ✏️
 3. [GET_NEXT_LINE](https://github.com/TheLink-42/GNL) 📜
-4. [PUSH_SWAP](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/push_swap) 🔋
+4. [PUSH_SWAP](https://github.com/TheLink-42/Push-Swap) 🔋
 5. [PIPEX](https://github.com/Afromaaaan/42-Journey/tree/main/CommonCore/pipex) 🔧
 6. [SO_LONG](https://github.com/TheLink-42/42-Journey/tree/main/CommonCore/so_long)
 7. [PHILOSOPHERS](https://github.com/TheLink-42/42-Journey/tree/main/CommonCore/philosophers)
@@ -52,7 +52,10 @@ Feel free to use and implement my code as much as you need to giving credit to t
 
 ## FAQ
 
-If you have any questions feel free to create an issue or reach me on slack under `jbaeza-c`
+If you have any wuestions feel free to reach out!
+
+* **Github:** [TheLink-42](https://github.com/TheLink-42)
+* **Slack:** [jbaeza-c](https://42born2code.slack.com/team/U05RS80818A)
 
 
-### [You can check my Intra profile here](https://profile.intra.42.fr/users/jbaeza-c)
+#### You can check my Intra profile [here](https://profile.intra.42.fr/users/jbaeza-c)
