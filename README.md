@@ -57,7 +57,7 @@ If you have any questions feel free to reach out!
 
 * **Github:** [TheLink-42](https://github.com/TheLink-42)
 * **Slack:** [jbaeza-c](https://42born2code.slack.com/team/U05RS80818A)
-* **LinkedIn:** [Jaime Baeza Casado](https://www.linkedin.com/in/jaime-baeza-casado-892684327/) <img src ="https://github.com/TheLink-42/42-project-badges/blob/main/otherAssets/LinkedInLogo.png" width="40" height="40" />
+* **LinkedIn:** [Jaime Baeza Casado](https://www.linkedin.com/in/jaime-baeza-casado-892684327/) <img src ="https://github.com/TheLink-42/42-project-badges/blob/main/otherAssets/LinkedInLogo.png" width="10" height="8" />
 
 
 #### You can check my Intra profile [here](https://profile.intra.42.fr/users/jbaeza-c) (Only available for 42 students)
